@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Lead Labs</title>
+  <meta name="description" content="Custom development services including SaaS platforms, CRM systems, booking engines, and payment integrations." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='6' y='24' font-size='20' fill='%232e7fff' font-family='sans-serif' font-weight='900'>L</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><div class="nav__logo-icon"><span>L</span></div><span data-i18n="logo">Lead Labs</span></a>
+      <div class="nav__links">
+        <a href="services.html" class="active" data-i18n="nav-services">Services</a>
+        <a href="index.html#how-it-works" data-i18n="nav-method">Method</a>
+        <a href="portfolio.html" data-i18n="nav-projects">Projects</a>
+        <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
+        <a href="about.html" data-i18n="nav-about">About</a>
+      </div>
+      <div class="nav__actions">
+        <button id="langToggle" class="lang-toggle">🇫🇷 FR</button>
+        <a class="nav__github" href="https://github.com/FouedDouiri" target="_blank">GitHub</a>
+        <a href="contact.html" class="btn-primary" data-i18n="start-project">Start a Project</a>
+        <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobileMenu">
+  <a href="services.html" data-i18n="nav-services">Services</a>
+  <a href="portfolio.html" data-i18n="nav-projects">Projects</a>
+  <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
+  <a href="about.html" data-i18n="nav-about">About</a>
+  <a href="contact.html" class="btn-primary" data-i18n="start-project">Start a Project</a>
+</div>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <h1 data-i18n="services-hero-title">What We Build</h1>
+      <p data-i18n="services-hero-desc">Not everything needs massive development. But if you're building — <em data-i18n="services-hero-em">do it right.</em></p>
+    </div>
+  </div>
+
+  <div class="services-page">
+    <div class="container">
+      <!-- Category 1: Digital Foundations -->
+      <section>
+        <div class="section-divider"><span class="section-divider__label">01 / <span data-i18n="cat1-label">Digital Foundations</span></span><span class="section-divider__line"></span></div>
+        <div class="bento-grid">
+          <div class="bento-big">
+            <div><h2 data-i18n="cat1-title">High-Performance Sites</h2><p data-i18n="cat1-desc">Next.js-powered platforms, SEO-ready from the first line of code. We build for speed and technical superiority.</p></div>
+            <div class="wireframe-preview"><div class="line"></div><div class="line short"></div><div class="blocks"><div class="block"></div><div class="block"></div></div></div>
+          </div>
+          <div class="bento-right">
+            <div class="bento-sm bento-sm--light"><div><h3 data-i18n="saas-title">SaaS Platforms</h3><p data-i18n="saas-desc">Complex dashboards that feel simple to the end user.</p></div><span class="bento-sm__kicker" data-i18n="complexity-solved">Complexity Solved</span></div>
+            <div class="bento-sm bento-sm--dark"><div><h3 data-i18n="landing-title">Landing Pages</h3><p data-i18n="landing-desc">High-conversion funnels built with editorial precision.</p></div><span class="bento-sm__kicker" data-i18n="conversion-priority">Conversion Priority</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Category 2: Engine & Efficiency -->
+      <section>
+        <div class="section-divider"><span class="section-divider__label">02 / <span data-i18n="cat2-label">Engine & Efficiency</span></span><span class="section-divider__line"></span></div>
+        <div class="services__grid">
+          <article class="service-card"><div class="service-card__icon"><span class="material-symbols-outlined">hub</span></div><h3 data-i18n="crm-title">CRM Systems</h3><p data-i18n="crm-desc">Internal tools adapted to how your team actually works.</p></article>
+          <article class="service-card"><div class="service-card__icon"><span class="material-symbols-outlined">event_available</span></div><h3 data-i18n="booking-title">Booking Systems</h3><p data-i18n="booking-desc">Reservation flows designed to handle scale while maintaining a high-end UX.</p></article>
+          <article class="service-card"><div class="service-card__icon"><span class="material-symbols-outlined">auto_mode</span></div><h3 data-i18n="automation-title">Automation & Systems</h3><p data-i18n="automation-desc">From lead capture to automated execution. We build the robots so you don't have to be one.</p></article>
+        </div>
+      </section>
+
+      <!-- Category 3: Payments -->
+      <section>
+        <div class="section-divider"><span class="section-divider__label">03 / <span data-i18n="cat3-label">Value Exchange</span></span><span class="section-divider__line"></span></div>
+        <div class="payments-card">
+          <div><h2 data-i18n="payments-title">Payments & Monetization</h2><p data-i18n="payments-desc">Integration isn't just about APIs; it's about trust at checkout. We build custom Stripe flows and bulletproof subscription systems.</p></div>
+          <div class="payments-stats"><div><p class="payments-stat__value">99.9%</p><p class="payments-stat__label" data-i18n="service-accuracy">Service Accuracy</p></div><div><p class="payments-stat__value">-22%</p><p class="payments-stat__label" data-i18n="churn-reduction">Churn Reduction</p></div></div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="services-cta">
+        <div><h2 data-i18n="services-cta-title">Tell me what you're trying to build</h2><p data-i18n="services-cta-desc">Whether it's a new project or a growing platform, we'll honestly tell you if we're the right partner.</p><a href="contact.html" class="btn-primary btn-large" data-i18n="contact-us">Contact Us</a></div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <div><p class="footer__brand">Lead Labs</p><p class="footer__tagline" data-i18n="footer-tagline">© 2024 Lead Labs. Built for high-conversion execution.</p></div>
+      <nav class="footer__links"><a href="https://github.com/FouedDouiri" target="_blank">GitHub</a><a href="#">LinkedIn</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

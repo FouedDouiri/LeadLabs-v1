@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Lead Labs</title>
+  <meta name="description" content="Real results from real projects. See how we've helped businesses scale with custom development." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='6' y='24' font-size='20' fill='%232e7fff' font-family='sans-serif' font-weight='900'>L</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><div class="nav__logo-icon"><span>L</span></div><span data-i18n="logo">Lead Labs</span></a>
+      <div class="nav__links">
+        <a href="services.html" data-i18n="nav-services">Services</a>
+        <a href="index.html#how-it-works" data-i18n="nav-method">Method</a>
+        <a href="portfolio.html" class="active" data-i18n="nav-projects">Projects</a>
+        <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
+        <a href="about.html" data-i18n="nav-about">About</a>
+      </div>
+      <div class="nav__actions">
+        <button id="langToggle" class="lang-toggle">🇫🇷 FR</button>
+        <a class="nav__github" href="https://github.com/FouedDouiri" target="_blank">GitHub</a>
+        <a href="contact.html" class="btn-primary" data-i18n="start-project">Start a Project</a>
+        <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobileMenu">
+  <a href="services.html" data-i18n="nav-services">Services</a>
+  <a href="portfolio.html" data-i18n="nav-projects">Projects</a>
+  <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
+  <a href="about.html" data-i18n="nav-about">About</a>
+  <a href="contact.html" class="btn-primary" data-i18n="start-project">Start a Project</a>
+</div>
+
+<main>
+  <div class="page-hero"><div class="container"><span class="animate-fade-up" style="font-family:var(--font-label);color:var(--color-surface-tint);font-weight:700;letter-spacing:.12em;font-size:.7rem;text-transform:uppercase;display:block;margin-bottom:1rem" data-i18n="case-studies">Études de cas</span><h1 class="animate-fade-up delay-1" data-i18n="portfolio-title">Nos Réalisations</h1><p class="animate-fade-up delay-2" style="max-width:40rem" data-i18n="portfolio-desc">Du travail concret. Des résultats réels. Nous ne nous contentons pas de concevoir des interfaces ; nous bâtissons la croissance par la précision architecturale.</p></div></div>
+  <div style="padding-bottom:6rem"><div class="container">
+    <article class="portfolio-case reveal" style="display:grid;gap:2.5rem;margin-bottom:5rem;align-items:center"><div class="overflow-wrap" style="border-radius:.375rem;overflow:hidden;box-shadow:0 20px 40px rgba(13,28,50,.08)"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=75" alt="Hotel" width="900" height="500" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;filter:grayscale(1);transition:filter .7s" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(1)'" /></div><div><div class="case-card__kicker"><span class="material-symbols-outlined" style="font-size:1rem">trending_up</span> <span data-i18n="conversion-goal">OBJECTIF CONVERSION</span></div><h2 style="font-family:var(--font-headline);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1.5rem" data-i18n="case1-title">Refonte de plateforme hôtelière</h2><div style="background:var(--color-surface-container-low);border-radius:.375rem;padding:1.5rem;display:flex;flex-direction:column;gap:1.25rem"><div><p style="font-family:var(--font-label);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-outline);margin-bottom:.375rem" data-i18n="problem">Problématique</p><p data-i18n="case1-problem">Le flux de réservation précédent était encombré, entraînant une chute massive des conversions lors de l'étape finale de paiement.</p></div><div><p style="font-family:var(--font-label);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-outline);margin-bottom:.375rem" data-i18n="solution">Solution</p><p data-i18n="case1-solution">Une interface fluide sur un seul écran qui privilégie le luxe visuel tout en simplifiant les choix de l'utilisateur.</p></div><div style="border-top:1px solid rgba(197,198,205,.2);padding-top:1.25rem"><p style="font-family:var(--font-label);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--color-tertiary);margin-bottom:.375rem" data-i18n="result">Résultat</p><p style="font-family:var(--font-headline);font-size:1.5rem;font-weight:800" data-i18n="case1-result">Conversion améliorée de 0,1% à 7%</p></div></div></div></article>
+    <div class="portfolio__grid" style="margin-bottom:5rem"><article class="case-card reveal"><div class="overflow-wrap"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&q=70" alt="Data" width="700" height="400" loading="lazy"/></div><div class="case-card__body"><h3 data-i18n="case2-title">Tableau de bord de réservation + système d'automatisation</h3><p><strong data-i18n="problem-short">Problématique :</strong> <span data-i18n="case2-problem">La saisie manuelle causait un taux d'erreur de 15% dans la logistique interne.</span></p><p style="margin-top:.75rem"><strong data-i18n="solution-short">Solution :</strong> <span data-i18n="case2-solution">Pipeline automatisé qui synchronise les calendriers et affecte les ressources automatiquement.</span></p><div class="case-card__result-box" style="margin-top:1.25rem"><p class="case-card__result-label" data-i18n="result-short">Résultat</p><p class="case-card__result-value" data-i18n="case2-result">Taux d'erreur → 0% · 40h/semaine économisées</p></div></div></article><article class="case-card reveal" style="margin-top:4rem"><div class="overflow-wrap"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=70" alt="Payment" width="700" height="400" loading="lazy"/></div><div class="case-card__body"><h3 data-i18n="case3-title">Système de paiement + flux d'onboarding</h3><p><strong data-i18n="problem-short">Problématique :</strong> <span data-i18n="case3-problem">Les utilisateurs trouvaient le processus de vérification en plusieurs étapes intimidant et lent.</span></p><p style="margin-top:.75rem"><strong data-i18n="solution-short">Solution :</strong> <span data-i18n="case3-solution">Un onboarding à divulgation progressive qui semble humain et guide l'utilisateur étape par étape.</span></p><div class="case-card__result-box" style="margin-top:1.25rem"><p class="case-card__result-label" data-i18n="result-short">Résultat</p><p class="case-card__result-value" data-i18n="case3-result">Temps d'activation -65% dès le premier mois</p></div></div></article></div>
+    <article class="reveal" style="display:grid;gap:2.5rem;align-items:center"><div style="background:var(--color-surface-container-low);border-radius:.375rem;padding:2.5rem;border-left:4px solid var(--color-primary)"><div style="display:flex;align-items:center;gap:.5rem;color:var(--color-tertiary);margin-bottom:1rem;font-family:var(--font-label);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase"><span class="material-symbols-outlined" style="font-size:1rem">precision_manufacturing</span> <span data-i18n="precision-building">CONSTRUCTION DE PRÉCISION</span></div><h2 style="font-family:var(--font-headline);font-size:clamp(1.8rem,3vw,2.2rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1.5rem" data-i18n="case4-title">CRM sur mesure</h2><p style="margin-bottom:1rem"><strong data-i18n="problem-short">Problématique :</strong> <span data-i18n="case4-problem">Les CRM du marché étaient trop complexes, ralentissant les opérations quotidiennes de l'équipe commerciale.</span></p><p style="margin-bottom:1rem"><strong data-i18n="solution-short">Solution :</strong> <span data-i18n="case4-solution">Un CRM épuré et spécifique qui se concentre uniquement sur les actions à haute valeur ajoutée réellement effectuées par l'équipe.</span></p><div style="border-top:1px solid rgba(197,198,205,.2);padding-top:1.25rem"><p style="font-family:var(--font-label);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:.375rem" data-i18n="result-short">Résultat</p><p style="font-family:var(--font-headline);font-size:1.4rem;font-weight:800" data-i18n="case4-result">Vélocité des ventes augmentée de 40% sans formation requise.</p></div></div><div class="overflow-wrap" style="border-radius:.375rem;overflow:hidden;box-shadow:0 20px 40px rgba(13,28,50,.08)"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=70" alt="Office" width="800" height="500" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;filter:grayscale(1);transition:filter .7s" onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(1)'"/></div></article>
+    <div style="margin-top:6rem;background:linear-gradient(135deg,#000 0%,#001a43 100%);border-radius:.5rem;padding:4rem 2.5rem;text-align:center;color:#fff;position:relative;overflow:hidden" class="reveal"><div style="position:absolute;bottom:-60px;right:-60px;font-size:300px;opacity:.04;font-family:'Material Symbols Outlined';pointer-events:none;line-height:1" aria-hidden="true">auto_awesome</div><h2 style="font-family:var(--font-headline);font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.05em;margin-bottom:1.5rem" data-i18n="build-yours">Construisons le vôtre</h2><p style="color:rgba(174,198,255,.75);font-size:1.1rem;max-width:36rem;margin:0 auto 2.5rem;line-height:1.6" data-i18n="build-yours-desc">Votre projet mérite le même niveau de précision architecturale et de design axé sur l'exécution.</p><div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center"><a href="contact.html" class="btn-cta" style="background:var(--color-tertiary);color:var(--color-on-tertiary);padding:1rem 2.5rem;border-radius:.25rem;font-family:var(--font-headline);font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;display:inline-block" data-i18n="start-project-btn">Lancer un projet</a><a href="pricing.html" style="border:1px solid rgba(255,255,255,.2);color:#fff;padding:1rem 2.5rem;border-radius:.25rem;font-family:var(--font-headline);font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;background:transparent;text-decoration:none;display:inline-block" data-i18n="view-pricing">Voir les tarifs</a></div></div>
+  </div></div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <div><p class="footer__brand">Lead Labs</p><p class="footer__tagline" data-i18n="footer-tagline">© 2024 Lead Labs. Built for high-conversion execution.</p></div>
+      <nav class="footer__links"><a href="https://github.com/FouedDouiri" target="_blank">GitHub</a><a href="#">LinkedIn</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

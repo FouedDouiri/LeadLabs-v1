@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Lead Labs</title>
+  <meta name="description" content="Tell me what you're trying to build. I'll tell you how we'll get there." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='6' y='24' font-size='20' fill='%232e7fff' font-family='sans-serif' font-weight='900'>L</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><div class="nav__logo-icon"><span>L</span></div><span data-i18n="logo">Lead Labs</span></a>
+      <div class="nav__links">
+        <a href="services.html" data-i18n="nav-services">Services</a>
+        <a href="index.html#how-it-works" data-i18n="nav-method">Method</a>
+        <a href="portfolio.html" data-i18n="nav-projects">Projects</a>
+        <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
+        <a href="about.html" data-i18n="nav-about">About</a>
+      </div>
+      <div class="nav__actions">
+        <button id="langToggle" class="lang-toggle">🇫🇷 FR</button>
+        <a class="nav__github" href="https://github.com/FouedDouiri" target="_blank">GitHub</a>
+        <a href="contact.html" class="btn-primary active" data-i18n="start-project">Start a Project</a>
+        <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobileMenu">
+  <a href="services.html" data-i18n="nav-services">Services</a>
+  <a href="portfolio.html" data-i18n="nav-projects">Projects</a>
+  <a href="pricing.html" data-i18n="nav-pricing">Pricing</a>
+  <a href="about.html" data-i18n="nav-about">About</a>
+  <a href="contact.html" class="btn-primary" data-i18n="start-project">Start a Project</a>
+</div>
+
+<main>
+  <div class="page-hero"><div class="container"><span style="display:inline-block;padding:.25rem .75rem;background:var(--color-surface-container-high);color:var(--color-on-primary-container);font-family:var(--font-label);font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border-radius:.125rem;margin-bottom:1.5rem" class="animate-fade-up" data-i18n="connection">Connexion</span><h1 class="animate-fade-up delay-1"><span style="color:var(--color-surface-tint)" data-i18n="start-conversation">Démarrer</span> <span data-i18n="the-conversation">la conversation</span></h1><p class="animate-fade-up delay-2" style="max-width:36rem" data-i18n="contact-desc">Dites-moi ce que vous essayez de construire. Je vous dirai comment nous y parviendrons.</p></div></div>
+  <div style="padding-bottom:6rem"><div class="container"><div class="contact__grid">
+    <div class="contact-info"><div class="contact-image-wrap reveal"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=70" alt="Bureau" width="700" height="525" loading="lazy" /></div><div class="exec-pipeline reveal"><h3 data-i18n="execution-pipeline">Pipeline d'Exécution</h3><div class="pipeline-item"><div class="pipeline-dot pipeline-dot--active"></div><div><strong data-i18n="spec-review">Examen de vos spécifications</strong><span data-i18n="architecture-team">Groupe d'Architecture Lead Labs</span></div></div><div class="pipeline-item inactive"><div class="pipeline-dot pipeline-dot--inactive"></div><div><strong data-i18n="feasibility-analysis">Analyse de faisabilité</strong><span data-i18n="awaiting-info">En attente d'informations...</span></div></div></div></div>
+    <div class="contact__form-wrap reveal"><div id="contactForm"><form id="projectForm" novalidate><div class="form-row"><div class="form-field"><label for="contact-name" data-i18n="name-label">Nom</label><input type="text" id="contact-name" name="name" placeholder="Jean Dupont" autocomplete="name" required /></div><div class="form-field"><label for="contact-email" data-i18n="email-label">Email</label><input type="email" id="contact-email" name="email" placeholder="jean@entreprise.com" autocomplete="email" required /></div></div><div class="form-field" style="margin-bottom:1.5rem"><label for="contact-project" data-i18n="project-label">Que construisez-vous ?</label><textarea id="contact-project" name="project" rows="4" placeholder="Décrivez brièvement votre vision, le problème et l'objectif." required></textarea></div><div class="form-field" style="margin-bottom:1.5rem"><label for="contact-budget" data-i18n="budget-label">Budget (optionnel)</label><select id="contact-budget" name="budget"><option value="" data-i18n="select-range">Sélectionnez une tranche</option><option value="800-1500">800€ – 1 500€</option><option value="1500-3000">1 500€ – 3 000€</option><option value="3000-10000">3 000€ – 10 000€</option><option value="10000+">10 000€+</option></select></div><div class="form-actions"><button type="submit" class="btn-submit" data-i18n="send-request">Envoyer la demande <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button><div class="divider-or"><span data-i18n="or">ou</span></div><a href="#" class="btn-call" data-i18n="book-call"><span class="material-symbols-outlined" aria-hidden="true">calendar_today</span> Réserver un appel rapide</a></div></form></div><div class="form-success" id="formSuccess"><div class="checkmark"><span class="material-symbols-outlined">check_circle</span></div><h3 data-i18n="message-received">Message reçu !</h3><p data-i18n="response-message">Foued vous répondra dans les 24 heures. Merci pour votre confiance.</p></div></div>
+  </div></div></div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer__inner">
+      <div><p class="footer__brand">Lead Labs</p><p class="footer__tagline" data-i18n="footer-tagline">© 2024 Lead Labs. Built for high-conversion execution.</p></div>
+      <nav class="footer__links"><a href="https://github.com/FouedDouiri" target="_blank">GitHub</a><a href="#">LinkedIn</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
