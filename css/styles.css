@@ -1,11 +1,15 @@
 /* ── CSS Custom Properties ─────────────────────── */
 :root {
-  --color-primary:            #000000;
-  --color-primary-container:  #001a43;
+  /* Updated primary colors */
+  --color-primary:            #071D49;
+  --color-primary-container:  #071D49;
+  --color-primary-gradient-start: #0B2A63;
+  --color-primary-gradient-end: #071D49;
+  
   --color-on-primary:         #ffffff;
-  --color-on-primary-fixed:   #001a43;
+  --color-on-primary-fixed:   #071D49;
   --color-surface-tint:       #0059c5;
-  --color-on-primary-container: #2e7fff;
+  --color-on-primary-container: #ffffff;
   --color-surface:            #f9f9ff;
   --color-surface-container:  #e8eeff;
   --color-surface-container-low:  #f0f3ff;
