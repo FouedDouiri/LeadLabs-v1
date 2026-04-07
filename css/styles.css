@@ -145,9 +145,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: #0f172a;
 }
 .nav__logo-icon {
-  width: 32px; height: 32px;
-  border-radius: 6px;
-  background: var(--color-primary);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  /* background: var(--color-primary); */
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
@@ -1429,6 +1429,19 @@ footer {
   .hero__grid { gap: 6rem; }
   .process__grid { gap: 5rem; }
   .about__grid { gap: 5rem; }
+}
+@media (max-width: 767px) {
+  .nav__logo span {
+    display: none;
+  }
+  
+  .nav__logo {
+    gap: 0; /* removes the gap between icon and hidden text */
+  }
+  
+  .nav__logo-icon {
+    margin-right: 0; /* ensures no extra space */
+  }
 }
 
 /* ── Entry Animations ─────────────────────────── */
