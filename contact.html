@@ -3,23 +3,556 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Lead Labs</title>
-  <meta name="description" content="Tell me what you're trying to build. I'll tell you how we'll get there." />
+  <title>Start Your Project | Lead Labs</title>
+  <meta name="description" content="Start your project, get a quote, or book a call. We'll help you build the right solution." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='6' y='24' font-size='20' fill='%232e7fff' font-family='sans-serif' font-weight='900'>L</text></svg>" />
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== CONTACT PAGE STYLES (cleaned) ===== */
+    .contact-main {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 8rem 1.5rem 6rem;
+    }
+    @media (min-width: 768px) {
+      .contact-main {
+        padding: 8rem 2rem 6rem;
+      }
+    }
+    .hero-section {
+      max-width: 48rem;
+      margin-bottom: 6rem;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 900;
+      font-family: var(--font-headline);
+      color: var(--color-on-surface);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--color-on-surface-variant);
+      margin-bottom: 1rem;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--color-secondary);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .btn-primary-large {
+      background: var(--color-primary);
+      color: var(--color-on-primary);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-family: var(--font-headline);
+      transition: all 0.3s;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary-large:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .btn-outline-large {
+      background: transparent;
+      border: 1px solid rgba(197,198,205,0.2);
+      color: var(--color-primary);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-family: var(--font-headline);
+      transition: all 0.3s;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .btn-outline-large:hover {
+      background: var(--color-surface-container-low);
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    /* Cards grid */
+    .cards-grid {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 8rem;
+    }
+    @media (min-width: 768px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .contact-card {
+      background: var(--color-surface-container-low);
+      padding: 2.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid transparent;
+      transition: all 0.5s;
+      cursor: pointer;
+      box-shadow: 0 20px 40px rgba(13,28,50,0.06);
+    }
+    .contact-card:hover {
+      border-color: var(--color-surface-tint);
+      background: var(--color-surface-container-lowest);
+      box-shadow: 0 25px 45px rgba(13,28,50,0.1);
+    }
+    .card-icon {
+      width: 3.5rem;
+      height: 3.5rem;
+      background: var(--color-primary-container);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .card-icon .material-symbols-outlined {
+      color: var(--color-on-primary-container);
+      font-size: 2rem;
+    }
+    .contact-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: var(--font-headline);
+      margin-bottom: 1rem;
+    }
+    .contact-card p {
+      color: var(--color-on-surface-variant);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+    .card-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-surface-tint);
+      font-weight: 700;
+      transition: gap 0.3s;
+    }
+    .contact-card:hover .card-link {
+      gap: 1rem;
+    }
+    
+    /* Forms container – collapses when no form is active */
+    .forms-container {
+      margin-bottom: 0;
+      min-height: 0;
+      display: flex;
+      justify-content: center;
+      transition: margin 0.3s;
+    }
+    .forms-container:has(.form-card.active) {
+      margin-bottom: 8rem;
+    }
+    .form-card {
+      background: var(--color-surface-container-lowest);
+      padding: 2rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 20px 40px rgba(13,28,50,0.06);
+      max-width: 700px;
+      width: 100%;
+      display: none;
+    }
+    .form-card.active {
+      display: block;
+    }
+    @media (min-width: 768px) {
+      .form-card {
+        padding: 3rem;
+      }
+    }
+    .form-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .form-header .material-symbols-outlined {
+      color: var(--color-surface-tint);
+      font-size: 1.8rem;
+    }
+    .form-header h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      font-family: var(--font-headline);
+    }
+    .contact-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .contact-form label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      background: var(--color-surface-container-low);
+      border: none;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(0,89,197,0.2);
+    }
+    .btn-form-start {
+      width: 100%;
+      background: var(--color-primary);
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-form-start:hover {
+      background: var(--color-primary-container);
+    }
+    .btn-form-quote {
+      width: 100%;
+      background: var(--color-tertiary);
+      color: white;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-form-quote:hover {
+      background: var(--color-tertiary-fixed-dim);
+    }
+    
+    /* Book a call section (calendar fixed) */
+    .call-section {
+      display: grid;
+      gap: 4rem;
+      margin-bottom: 8rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .call-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+    .pill {
+      display: inline-block;
+      background: var(--color-surface-container-high);
+      color: var(--color-surface-tint);
+      padding: 0.25rem 1rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .call-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      font-family: var(--font-headline);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .call-desc {
+      font-size: 1.2rem;
+      color: var(--color-secondary);
+      margin-bottom: 2rem;
+    }
+    .checklist {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+    .check-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--color-surface-tint);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .check-icon .material-symbols-outlined {
+      color: white;
+      font-size: 0.8rem;
+    }
+    .checklist li span {
+      color: var(--color-on-surface-variant);
+    }
+    .checklist li:hover span {
+      color: var(--color-on-surface);
+    }
+    .testimonial {
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--color-secondary-fixed-variant);
+    }
+    /* Calendar – clean & functional */
+    .calendar-card {
+      background: var(--color-surface-container-highest);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 20px 40px rgba(13,28,50,0.06);
+    }
+    .calendar-inner {
+      background: var(--color-surface-container-lowest);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--color-surface-container-high);
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-text .name {
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .profile-text .role {
+      font-size: 0.7rem;
+      color: var(--color-secondary);
+    }
+    .timezone {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--color-surface-tint);
+    }
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .calendar-day-header {
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      padding: 0.5rem 0;
+    }
+    .calendar-date {
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      background: var(--color-surface-container-low);
+      border-radius: 0.25rem;
+      color: var(--color-on-surface-variant);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .calendar-date.inactive {
+      opacity: 0.3;
+      cursor: default;
+    }
+    .calendar-date.available {
+      background: rgba(0,89,197,0.08);
+      color: var(--color-surface-tint);
+      border: 1px solid rgba(0,89,197,0.2);
+      font-weight: 600;
+    }
+    .calendar-date.available:hover {
+      background: rgba(0,89,197,0.15);
+      transform: scale(1.02);
+    }
+    .calendar-date.selected {
+      background: var(--color-surface-tint);
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border: none;
+    }
+    .btn-pick-slot {
+      width: 100%;
+      background: var(--color-primary);
+      color: white;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-pick-slot:hover {
+      background: var(--color-primary-container);
+    }
+    
+    /* Roadmap steps */
+    .roadmap {
+      text-align: center;
+      margin-bottom: 8rem;
+    }
+    .roadmap h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: var(--font-headline);
+      margin-bottom: 4rem;
+    }
+    .steps-grid {
+      display: grid;
+      gap: 3rem;
+      position: relative;
+    }
+    @media (min-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .step {
+      text-align: center;
+      flex-direction: column;
+    }
+    .step-icon {
+      width: 5rem;
+      height: 5rem;
+      background: var(--color-surface-container-high);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 10px 25px rgba(13,28,50,0.1);
+    }
+    .step-icon .material-symbols-outlined {
+      font-size: 2rem;
+      color: var(--color-surface-tint);
+    }
+    .step-badge {
+      display: inline-block;
+      background: var(--color-primary);
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 800;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      width: 4rem;
+      margin-left: auto;
+      margin-right: auto;
+        /* display: block; */
+  margin: 0 auto 0.75rem;
+    }
+    .step h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      font-family: var(--font-headline);
+      margin-bottom: 0.5rem;
+    }
+    .step p {
+      color: var(--color-secondary);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      max-width: 14rem;
+      margin: 0 auto;
+    }
+    
+    /* Final CTA */
+    .final-cta-contact {
+      background: var(--color-surface-container-low);
+      border-radius: 0.75rem;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .final-cta-contact h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      font-family: var(--font-headline);
+      margin-bottom: 2rem;
+    }
+    .final-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    @media (max-width: 767px) {
+      .contact-main {
+        padding: 6rem 1rem 4rem;
+      }
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      .cards-grid, .call-section, .roadmap {
+        margin-bottom: 4rem;
+      }
+      .forms-container:has(.form-card.active) {
+        margin-bottom: 4rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
+<!-- ===== HEADER (unchanged) ===== -->
 <nav class="nav" id="nav">
   <div class="container">
     <div class="nav__inner">
-       <a href="index.html" class="nav__logo">
-  <div class="nav__logo-icon">
-    <img src="images/logo.png" alt="Lead Labs logo" width="36" height="36" loading="eager" fetchpriority="high" />
-  </div>
-  <span data-i18n="logo">Lead Labs</span>
-</a>
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-icon">
+          <img src="images/logo.png" alt="Lead Labs logo" width="36" height="36" loading="eager" fetchpriority="high" />
+        </div>
+        <span data-i18n="logo">Lead Labs</span>
+      </a>
       <div class="nav__links">
         <a href="services.html" data-i18n="nav-services">Services</a>
         <a href="index.html#how-it-works" data-i18n="nav-method">Method</a>
@@ -45,12 +578,217 @@
   <a href="contact.html" class="btn-primary" data-i18n="start-project">Start a Project</a>
 </div>
 
-<main>
-  <div class="page-hero"><div class="container"><span style="display:inline-block;padding:.25rem .75rem;background:var(--color-surface-container-high);color:var(--color-on-primary-container);font-family:var(--font-label);font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border-radius:.125rem;margin-bottom:1.5rem" class="animate-fade-up" data-i18n="connection">Connexion</span><h1 class="animate-fade-up delay-1"><span style="color:var(--color-surface-tint)" data-i18n="start-conversation">Démarrer</span> <span data-i18n="the-conversation">la conversation</span></h1><p class="animate-fade-up delay-2" style="max-width:36rem" data-i18n="contact-desc">Dites-moi ce que vous essayez de construire. Je vous dirai comment nous y parviendrons.</p></div></div>
-  <div style="padding-bottom:6rem"><div class="container"><div class="contact__grid">
-    <div class="contact-info"><div class="contact-image-wrap reveal"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=70" alt="Bureau" width="700" height="525" loading="lazy" /></div><div class="exec-pipeline reveal"><h3 data-i18n="execution-pipeline">Pipeline d'Exécution</h3><div class="pipeline-item"><div class="pipeline-dot pipeline-dot--active"></div><div><strong data-i18n="spec-review">Examen de vos spécifications</strong><span data-i18n="architecture-team">Groupe d'Architecture Lead Labs</span></div></div><div class="pipeline-item inactive"><div class="pipeline-dot pipeline-dot--inactive"></div><div><strong data-i18n="feasibility-analysis">Analyse de faisabilité</strong><span data-i18n="awaiting-info">En attente d'informations...</span></div></div></div></div>
-    <div class="contact__form-wrap reveal"><div id="contactForm"><form id="projectForm" novalidate><div class="form-row"><div class="form-field"><label for="contact-name" data-i18n="name-label">Nom</label><input type="text" id="contact-name" name="name" placeholder="Jean Dupont" autocomplete="name" required /></div><div class="form-field"><label for="contact-email" data-i18n="email-label">Email</label><input type="email" id="contact-email" name="email" placeholder="jean@entreprise.com" autocomplete="email" required /></div></div><div class="form-field" style="margin-bottom:1.5rem"><label for="contact-project" data-i18n="project-label">Que construisez-vous ?</label><textarea id="contact-project" name="project" rows="4" placeholder="Décrivez brièvement votre vision, le problème et l'objectif." required></textarea></div><div class="form-field" style="margin-bottom:1.5rem"><label for="contact-budget" data-i18n="budget-label">Budget (optionnel)</label><select id="contact-budget" name="budget"><option value="" data-i18n="select-range">Sélectionnez une tranche</option><option value="800-1500">800€ – 1 500€</option><option value="1500-3000">1 500€ – 3 000€</option><option value="3000-10000">3 000€ – 10 000€</option><option value="10000+">10 000€+</option></select></div><div class="form-actions"><button type="submit" class="btn-submit" data-i18n="send-request">Envoyer la demande <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></button><div class="divider-or"><span data-i18n="or">ou</span></div><a href="#" class="btn-call" data-i18n="book-call"><span class="material-symbols-outlined" aria-hidden="true">calendar_today</span> Réserver un appel rapide</a></div></form></div><div class="form-success" id="formSuccess"><div class="checkmark"><span class="material-symbols-outlined">check_circle</span></div><h3 data-i18n="message-received">Message reçu !</h3><p data-i18n="response-message">Foued vous répondra dans les 24 heures. Merci pour votre confiance.</p></div></div>
-  </div></div></div>
+<main class="contact-main">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1 class="hero-title" data-i18n="contact-hero-title">Start Your Project</h1>
+    <p class="hero-subtitle" data-i18n="contact-hero-subtitle">Choose how you'd like to proceed</p>
+    <p class="hero-desc" data-i18n="contact-hero-desc">Start fast, request a quote, or book a call. We've designed our intake process to respect your time and provide immediate clarity.</p>
+    <div class="hero-buttons">
+      <button class="btn-primary-large" id="hero-start-now" data-i18n="start-now">Start Now</button>
+      <button class="btn-outline-large" id="hero-book-call" data-i18n="book-call-hero">Book a Call</button>
+    </div>
+  </section>
+
+  <!-- Choose Path Section -->
+  <div class="cards-grid">
+    <div class="contact-card" id="card-fast">
+      <div class="card-icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+      <h3 data-i18n="card-fast-title">I want to start fast</h3>
+      <p data-i18n="card-fast-desc">I already know what I need. Start quickly and skip the back-and-forth.</p>
+      <div class="card-link"><span data-i18n="select-path">Select path</span> <span class="material-symbols-outlined">arrow_forward</span></div>
+    </div>
+    <div class="contact-card" id="card-help">
+      <div class="card-icon"><span class="material-symbols-outlined">lightbulb</span></div>
+      <h3 data-i18n="card-help-title">I need help defining it</h3>
+      <p data-i18n="card-help-desc">Not sure yet? Share your idea and we'll help define scope, timeline and pricing.</p>
+      <div class="card-link"><span data-i18n="select-path">Select path</span> <span class="material-symbols-outlined">arrow_forward</span></div>
+    </div>
+  </div>
+
+  <!-- Dynamic Forms Container – no empty space when hidden -->
+  <div class="forms-container" id="dynamic-forms">
+    <div class="form-card" id="start-form">
+      <div class="form-header">
+        <span class="material-symbols-outlined">speed</span>
+        <h2 data-i18n="start-project-title">Start your project</h2>
+      </div>
+      <form class="contact-form" id="startProjectForm">
+        <div class="form-group">
+          <label data-i18n="name-label">Name</label>
+          <input type="text" name="name" placeholder="John Doe" required />
+        </div>
+        <div class="form-group">
+          <label data-i18n="email-label">Email</label>
+          <input type="email" name="email" placeholder="john@company.com" required />
+        </div>
+        <div class="form-group">
+          <label data-i18n="company-label">Company</label>
+          <input type="text" name="company" placeholder="Lead Labs" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="project-type-label">Project Type</label>
+          <select name="project_type">
+            <option data-i18n="project-type-landing">Landing page</option>
+            <option data-i18n="project-type-business">Business website</option>
+            <option data-i18n="project-type-redesign">Full redesign</option>
+            <option data-i18n="project-type-automation">Automation</option>
+            <option data-i18n="project-type-custom">Custom platform</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="timeline-label">Timeline</label>
+          <select name="timeline">
+            <option data-i18n="timeline-2-4">2-4 Weeks</option>
+            <option data-i18n="timeline-1-2">1-2 Months</option>
+            <option data-i18n="timeline-3-plus">3+ Months</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="budget-label">Budget Range</label>
+          <select name="budget">
+            <option>$5k - $10k</option>
+            <option>$10k - $25k</option>
+            <option>$25k - $50k</option>
+            <option>$50k+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="project-details-label">Project Details</label>
+          <textarea name="details" rows="4" placeholder="Tell us about your objectives..."></textarea>
+        </div>
+        <button type="submit" class="btn-form-start" data-i18n="start-project-btn">Start project</button>
+      </form>
+    </div>
+
+    <div class="form-card" id="quote-form">
+      <div class="form-header">
+        <span class="material-symbols-outlined">description</span>
+        <h2 data-i18n="get-quote-title">Get a quote</h2>
+      </div>
+      <form class="contact-form" id="quoteForm">
+        <div class="form-group">
+          <label data-i18n="name-label">Name</label>
+          <input type="text" name="name" placeholder="Jane Smith" required />
+        </div>
+        <div class="form-group">
+          <label data-i18n="email-label">Email</label>
+          <input type="email" name="email" placeholder="jane@enterprise.com" required />
+        </div>
+        <div class="form-group">
+          <label data-i18n="company-label">Company</label>
+          <input type="text" name="company" placeholder="Enterprise Co." />
+        </div>
+        <div class="form-group">
+          <label data-i18n="website-label">Website URL</label>
+          <input type="url" name="website" placeholder="https://example.com" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="project-type-label">Project Type</label>
+          <select name="project_type">
+            <option data-i18n="project-type-landing">Landing page</option>
+            <option data-i18n="project-type-business">Business website</option>
+            <option data-i18n="project-type-redesign">Full redesign</option>
+            <option data-i18n="project-type-automation">Automation</option>
+            <option data-i18n="project-type-custom">Custom platform</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="timeline-label">Timeline</label>
+          <select name="timeline">
+            <option data-i18n="timeline-2-4">2-4 Weeks</option>
+            <option data-i18n="timeline-1-2">1-2 Months</option>
+            <option data-i18n="timeline-3-plus">3+ Months</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="budget-label">Budget Range</label>
+          <select name="budget">
+            <option>$5k - $10k</option>
+            <option>$10k - $25k</option>
+            <option>$25k - $50k</option>
+            <option>$50k+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="project-details-quote-label">Project Details</label>
+          <textarea name="details" rows="4" placeholder="Describe the challenges you're looking to solve..."></textarea>
+        </div>
+        <button type="submit" class="btn-form-quote" data-i18n="get-quote-btn">Get quote</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Book a Call Section (calendar fixed) -->
+  <div class="call-section">
+    <div class="call-content">
+      <div class="pill" data-i18n="consultation-pill">Consultation</div>
+      <h2 class="call-title" data-i18n="call-title">Prefer to talk?</h2>
+      <p class="call-desc" data-i18n="call-desc">Book a quick call with your developer. We'll review your idea and define next steps.</p>
+      <ul class="checklist">
+        <li><div class="check-icon"><span class="material-symbols-outlined">check</span></div><span data-i18n="check1">Free 15 minute intro</span></li>
+        <li><div class="check-icon"><span class="material-symbols-outlined">check</span></div><span data-i18n="check2">Discuss scope</span></li>
+        <li><div class="check-icon"><span class="material-symbols-outlined">check</span></div><span data-i18n="check3">Rough timeline</span></li>
+        <li><div class="check-icon"><span class="material-symbols-outlined">check</span></div><span data-i18n="check4">Next steps</span></li>
+      </ul>
+      <p class="testimonial" data-i18n="call-testimonial">"No commitment. Just a quick conversation to see if we're a fit."</p>
+    </div>
+    <div class="calendar-card">
+      <div class="calendar-inner">
+        <div class="calendar-header">
+          <div class="profile">
+            <div class="avatar"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2i3yk4vlf0LyoYFpN6gkn5TE4kwZh3SFeKnV6egmYB9cSW_uelPs3K25wui6xHVG8PwfPwqFCH8fWoizM_4FBNsecPWIYs3Z_8N--0jOBqAdktGZtemwxTLm6YsOZKnTUYWbCNC_408wx3JcJNOcbQi-qU_86bCEiPZvl9-Lq-ydn5WnP8KxWSJ8svPQi1AUIu7XCykPuHz8-eHAtPKK6jGeGotrjqlFZtIle9MU9PMGu_YoBQOR90Jpy9DBsU-R9JxOWkYR216sP" alt="Lead Developer" /></div>
+            <div class="profile-text">
+              <div class="name" data-i18n="lead-dev-name">Lead Developer</div>
+              <div class="role" data-i18n="lead-dev-role">Available for 15/30 min calls</div>
+            </div>
+          </div>
+          <div class="timezone" data-i18n="timezone">GMT +0 (London)</div>
+        </div>
+        <div class="calendar-grid">
+          <div class="calendar-day-header">M</div><div class="calendar-day-header">T</div><div class="calendar-day-header">W</div><div class="calendar-day-header">T</div><div class="calendar-day-header">F</div><div class="calendar-day-header">S</div><div class="calendar-day-header">S</div>
+          <div class="calendar-date inactive">28</div><div class="calendar-date inactive">29</div><div class="calendar-date inactive">30</div>
+          <div class="calendar-date available">1</div><div class="calendar-date available">2</div><div class="calendar-date">3</div><div class="calendar-date">4</div>
+          <div class="calendar-date available">5</div><div class="calendar-date">6</div><div class="calendar-date">7</div><div class="calendar-date">8</div><div class="calendar-date">9</div><div class="calendar-date">10</div><div class="calendar-date">11</div>
+        </div>
+        <button class="btn-pick-slot" data-i18n="pick-slot">Pick a Slot</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Execution Roadmap -->
+  <div class="roadmap">
+    <h2 data-i18n="roadmap-title">Execution Roadmap</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-icon"><span class="material-symbols-outlined">send</span></div>
+        <div class="step-badge" data-i18n="step1-badge">Step 01</div>
+        <h4 data-i18n="step1-title">Submit request</h4>
+        <p data-i18n="step1-desc">Our systems log your technical requirements into our review queue immediately.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon"><span class="material-symbols-outlined">verified</span></div>
+        <div class="step-badge" data-i18n="step2-badge">Step 02</div>
+        <h4 data-i18n="step2-title">We review and reply</h4>
+        <p data-i18n="step2-desc">An engineer reviews your brief and responds within 24 hours with next steps.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon"><span class="material-symbols-outlined">construction</span></div>
+        <div class="step-badge" data-i18n="step3-badge">Step 03</div>
+        <h4 data-i18n="step3-title">We start building</h4>
+        <p data-i18n="step3-desc">Kick-off call scheduled and the first development sprint begins.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="final-cta-contact">
+    <h2 data-i18n="final-cta-title">Ready to build?</h2>
+    <div class="final-buttons">
+      <button class="btn-primary-large" id="final-start-project" data-i18n="start-project-final">Start project</button>
+      <button class="btn-outline-large" id="final-book-call" data-i18n="book-call-final">Book a Call</button>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -63,5 +801,84 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  (function() {
+    // Form elements
+    const startForm = document.getElementById('start-form');
+    const quoteForm = document.getElementById('quote-form');
+    const formsContainer = document.getElementById('dynamic-forms');
+    
+    function showForm(formType) {
+      startForm.classList.remove('active');
+      quoteForm.classList.remove('active');
+      if (formType === 'start') {
+        startForm.classList.add('active');
+      } else if (formType === 'quote') {
+        quoteForm.classList.add('active');
+      }
+      // Scroll to form container
+      formsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    
+    // Card clicks
+    document.getElementById('card-fast')?.addEventListener('click', () => showForm('start'));
+    document.getElementById('card-help')?.addEventListener('click', () => showForm('quote'));
+    
+    // Hero buttons
+    document.getElementById('hero-start-now')?.addEventListener('click', () => showForm('start'));
+    document.getElementById('hero-book-call')?.addEventListener('click', () => {
+      document.querySelector('.call-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    
+    // Final CTA buttons
+    document.getElementById('final-start-project')?.addEventListener('click', () => showForm('start'));
+    document.getElementById('final-book-call')?.addEventListener('click', () => {
+      document.querySelector('.call-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    
+    // Form submissions
+    const startFormElem = document.getElementById('startProjectForm');
+    const quoteFormElem = document.getElementById('quoteForm');
+    if (startFormElem) {
+      startFormElem.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you! We will review your project details and get back to you within 24 hours.');
+        startFormElem.reset();
+        startForm.classList.remove('active');
+      });
+    }
+    if (quoteFormElem) {
+      quoteFormElem.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thanks for your request! We will prepare a quote and contact you shortly.');
+        quoteFormElem.reset();
+        quoteForm.classList.remove('active');
+      });
+    }
+    
+    // Calendar date selection
+    const dates = document.querySelectorAll('.calendar-date.available');
+    dates.forEach(date => {
+      date.addEventListener('click', () => {
+        // Remove selected class from all dates
+        document.querySelectorAll('.calendar-date').forEach(d => d.classList.remove('selected'));
+        date.classList.add('selected');
+      });
+    });
+    
+    // Pick slot button
+    const pickSlot = document.querySelector('.btn-pick-slot');
+    if (pickSlot) {
+      pickSlot.addEventListener('click', () => {
+        const selected = document.querySelector('.calendar-date.selected');
+        if (selected) {
+          alert(`You selected slot on the ${selected.innerText}. In production, this would open a calendar booking link.`);
+        } else {
+          alert('Please select an available date first.');
+        }
+      });
+    }
+  })();
+</script>
 </body>
 </html>

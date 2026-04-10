@@ -3,28 +3,837 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lead Labs | Développez plus vite. Vendez mieux.</title>
-  <meta name="description" content="Lead Labs — Plateformes, sites et automatisations sur mesure conçus pour la performance." />
+  <title>Lead Labs | We redesign outdated websites into lead‑generating pages</title>
+  <meta name="description" content="Lead Labs — Homepage redesign, business websites, automation and custom platforms. Start with a redesign, expand when needed." />
   <meta name="author" content="Foued Douiri — Lead Labs" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- <link rel="preload" as="image" href="/images/hero.jpg"> -->
   <link rel="canonical" href="https://leadlabs.dev/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='6' y='24' font-size='20' fill='%232e7fff' font-family='sans-serif' font-weight='900'>LL</text></svg>" />
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== NEW LANDING PAGE STYLES (conflict‑free) ===== */
+    .container-new {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    /* Hero */
+    .hero-new {
+      padding: 8rem 0 4rem;
+    }
+    @media (min-width: 1024px) {
+      .hero-new {
+        padding: 10rem 0 6rem;
+      }
+    }
+    .hero-grid {
+      display: grid;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+      }
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(46,127,255,0.08);
+      border-radius: 999px;
+      padding: 0.25rem 1rem;
+      border: 1px solid rgba(46,127,255,0.15);
+      margin-bottom: 2rem;
+    }
+    .hero-badge .dot {
+      width: 0.375rem;
+      height: 0.375rem;
+      background: var(--color-primary);
+      border-radius: 50%;
+    }
+    .hero-badge span {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .hero-title {
+      font-family: var(--font-headline);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+    }
+    .hero-title .accent {
+      color: var(--color-surface-tint);
+    }
+    .hero-desc {
+      font-size: 1.2rem;
+      color: var(--color-on-surface-variant);
+      margin-bottom: 2rem;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .btn-primary-new {
+      background: var(--color-primary);
+      color: white;
+      padding: 0.875rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-family: var(--font-headline);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary-new:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .btn-outline-new {
+      background: transparent;
+      border: 1px solid rgba(197,198,205,0.3);
+      color: var(--color-primary);
+      padding: 0.875rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-family: var(--font-headline);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      transition: all 0.2s;
+    }
+    .btn-outline-new:hover {
+      background: var(--color-surface-container-low);
+      transform: translateY(-2px);
+    }
+    .hero-image {
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 30px 50px -20px rgba(13,28,50,0.2);
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Problem section */
+    .problem-section {
+      background: var(--color-surface-container-low);
+      padding: 6rem 0;
+    }
+    .problem-grid {
+      display: grid;
+      gap: 3rem;
+    }
+    @media (min-width: 1024px) {
+      .problem-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+    }
+    .problem-sticky h2 {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 2rem;
+    }
+    .problem-card {
+      background: var(--color-surface-container-lowest);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--color-primary);
+    }
+    .problem-card .icon {
+      flex-shrink: 0;
+    }
+    .problem-card .icon span {
+      font-size: 2rem;
+      color: var(--color-primary);
+    }
+    .problem-card h3 {
+      font-family: var(--font-headline);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .problem-card p {
+      color: var(--color-on-surface-variant);
+      font-size: 0.9rem;
+    }
+    
+    /* Redesign focus */
+    .redesign-focus {
+      padding: 6rem 0;
+    }
+    .redesign-card {
+      background: var(--color-primary-container);
+      border-radius: 1.5rem;
+      padding: 3rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    @media (min-width: 1024px) {
+      .redesign-card {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4rem;
+      }
+    }
+    .redesign-content h2 {
+      font-family: var(--font-headline);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+    .redesign-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .redesign-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .redesign-feature span:first-child {
+      color: var(--color-surface-tint);
+    }
+    .redesign-preview {
+      background: var(--color-surface-container-lowest);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      width: 280px;
+    }
+    .redesign-preview .line {
+      height: 0.5rem;
+      background: var(--color-surface-container);
+      border-radius: 0.25rem;
+      margin-bottom: 1rem;
+    }
+    .redesign-preview .line.short {
+      width: 60%;
+    }
+    .redesign-preview .button {
+      height: 3rem;
+      background: var(--color-surface-tint);
+      border-radius: 0.5rem;
+      margin-top: 2rem;
+    }
+    
+    /* Services bento */
+    .bento-services {
+      background: var(--color-surface);
+      padding: 6rem 0;
+    }
+    .bento-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .bento-header h2 {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .bento-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .bento-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .bento-item {
+      background: var(--color-surface-container-lowest);
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: all 0.3s;
+    }
+    .bento-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px rgba(13,28,50,0.08);
+    }
+    .bento-item .material-symbols-outlined {
+      font-size: 2.5rem;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+    .bento-item h3 {
+      font-family: var(--font-headline);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .bento-item p {
+      color: var(--color-on-surface-variant);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .bento-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-primary);
+    }
+    .bento-link:hover {
+      gap: 0.5rem;
+    }
+    
+    /* Portfolio / Recent improvements */
+    .portfolio-section {
+      background: var(--color-surface-container-low);
+      padding: 6rem 0;
+    }
+    .portfolio-header {
+      margin-bottom: 4rem;
+    }
+    .portfolio-header h2 {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+    }
+    .portfolio-grid-new {
+      display: grid;
+      gap: 4rem;
+    }
+    @media (min-width: 768px) {
+      .portfolio-grid-new {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+      }
+    }
+    .portfolio-card-new {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 30px -5px rgba(13,28,50,0.08);
+    }
+    .portfolio-card-new:hover {
+      box-shadow: 0 25px 50px -12px rgba(13,28,50,0.15);
+      transform: translateY(-8px);
+    }
+    .portfolio-card-new .aspect-video {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .portfolio-card-new img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s;
+    }
+    .portfolio-card-new:hover img {
+      transform: scale(1.05);
+    }
+    .portfolio-card-body {
+      padding: 2rem;
+    }
+    .portfolio-card-body h3 {
+      font-family: var(--font-headline);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 0.75rem;
+    }
+    .portfolio-tag {
+      display: inline-block;
+      background: var(--color-surface-container-low);
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.25rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-on-surface-variant);
+      margin-bottom: 1.5rem;
+    }
+    .portfolio-description {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease-out;
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+    .portfolio-card-new:hover .portfolio-description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Testimonials – stronger floating shadow (rest + hover) */
+    .testimonials {
+      padding: 6rem 0;
+      background: #f5f7fa;
+    }
+    .testimonials-grid {
+      display: grid;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 20px 40px -20px rgba(13, 28, 50, 0.18), 0 10px 20px -15px rgba(13, 28, 50, 0.10);
+    }
+    .testimonial-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 50px -25px rgba(13, 28, 50, 0.25), 0 15px 25px -18px rgba(13, 28, 50, 0.15);
+    }
+    .testimonial-avatar {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background: #e2e8f0;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .testimonial-role {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-on-surface-variant);
+      margin-bottom: 1rem;
+    }
+    .testimonial-text {
+      font-style: italic;
+      color: var(--color-on-surface-variant);
+      line-height: 1.5;
+    }
+    
+    /* Pricing */
+    .pricing-landing {
+      padding: 6rem 0;
+    }
+    .pricing-grid-landing {
+      display: grid;
+      gap: 2rem;
+      align-items: end;
+    }
+    @media (min-width: 768px) {
+      .pricing-grid-landing {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .pricing-card-landing {
+      background: var(--color-surface-container-low);
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+    .pricing-card-landing.featured {
+      background: var(--color-primary);
+      color: white;
+      position: relative;
+      transform: scale(1.02);
+    }
+    .pricing-card-landing.featured .badge {
+      position: absolute;
+      top: -0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-tertiary);
+      color: white;
+      padding: 0.25rem 1rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .pricing-card-landing h3 {
+      font-family: var(--font-headline);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .pricing-price {
+      font-family: var(--font-headline);
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    .pricing-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .btn-pricing-landing {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      font-weight: 700;
+      display: inline-block;
+    }
+    .btn-pricing-outline {
+      border: 1px solid rgba(0,0,0,0.15);
+      background: transparent;
+    }
+    .btn-pricing-light {
+      background: white;
+      color: var(--color-primary);
+    }
+    
+    /* Flexible payment options – more height and spacing */
+    .flexible-payments-landing {
+      margin-top: 5rem;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .flexible-grid-landing {
+      display: grid;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    @media (min-width: 768px) {
+      .flexible-grid-landing {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+      }
+    }
+    .flexible-payments-landing h4 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .flexible-payments-landing > p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .flexible-grid-landing > div {
+      padding: 1.5rem;
+      background: var(--color-surface-container-lowest);
+      border-radius: 1rem;
+      transition: all 0.3s;
+    }
+    .flexible-grid-landing > div:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -15px rgba(13,28,50,0.1);
+    }
+    
+    /* How it works – tighter spacing, narrower width */
+    .steps-new {
+      background: var(--color-surface-container-low);
+      padding: 6rem 0;
+      position: relative;
+    }
+    .howit-steps-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .howit-steps-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(0,0,0,0.1);
+      transform: translateX(-50%);
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .howit-steps-container::before {
+        display: block;
+      }
+    }
+    .howit-step-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .howit-step-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (min-width: 768px) {
+      .howit-step-item {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+      .howit-step-item:nth-child(odd) {
+        flex-direction: row;
+      }
+      .howit-step-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+    }
+    .howit-step-circle {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin: 0 auto 0.15rem;
+      position: relative;
+      z-index: 2;
+    }
+    @media (min-width: 768px) {
+      .howit-step-circle {
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1rem;
+      }
+    }
+    .howit-step-text {
+      text-align: center;
+    }
+    .howit-step-text h3 {
+      font-family: var(--font-headline);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+    .howit-step-text p {
+      color: var(--color-on-surface-variant);
+      font-size: 0.85rem;
+      line-height: 1.4;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .howit-step-item:nth-child(odd) .howit-step-text {
+        margin-right: auto;
+        text-align: right;
+      }
+      .howit-step-item:nth-child(even) .howit-step-text {
+        margin-left: auto;
+        text-align: left;
+      }
+      .howit-step-text p {
+        margin: 0;
+      }
+      .howit-step-text h3 {
+        font-size: 1.1rem;
+      }
+    }
+    
+    /* Developer profile – more height and better alignment */
+    .developer-section {
+      padding: 8rem 0;
+    }
+    .developer-grid {
+      display: grid;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .developer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+      }
+    }
+    .developer-card {
+      background: var(--color-surface-container-low);
+      padding: 3rem;
+      border-radius: 1.5rem;
+      position: relative;
+    }
+    .developer-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: #d1fae5;
+      color: #065f46;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .developer-avatar {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .developer-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .developer-name {
+      font-family: var(--font-headline);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    .developer-title {
+      color: var(--color-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .developer-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .developer-tag {
+      background: white;
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .timeline-item {
+      background: var(--color-surface-container-lowest);
+      padding: 1.25rem;
+      border-radius: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 4px solid var(--color-surface-tint);
+      font-size: 1rem;
+    }
+    .timeline-footer-text {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    
+    /* Final CTA – more height */
+    .final-cta-new {
+      background: var(--color-primary);
+      color: white;
+      padding: 8rem 0;
+      text-align: center;
+    }
+    .final-cta-new h2 {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .final-cta-new p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      max-width: 32rem;
+      margin: 0 auto 2rem;
+    }
+    .final-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .btn-white {
+      background: white;
+      color: var(--color-primary);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .btn-outline-white {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+    
+    /* Reveal animation for other sections */
+    .reveal-fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <nav class="nav" id="nav">
   <div class="container">
     <div class="nav__inner">
-     <a href="index.html" class="nav__logo">
-  <div class="nav__logo-icon">
-  <img src="images/logo.png" alt="Lead Labs logo" width="36" height="36" loading="eager" fetchpriority="high" />
-</div>
-  <span data-i18n="logo">Lead Labs</span>
-</a>
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-icon">
+          <img src="images/logo.png" alt="Lead Labs logo" width="36" height="36" loading="eager" fetchpriority="high" />
+        </div>
+        <span data-i18n="logo">Lead Labs</span>
+      </a>
       <div class="nav__links">
         <a href="services.html" data-i18n="nav-services">Services</a>
         <a href="index.html#how-it-works" data-i18n="nav-method">Méthode</a>
@@ -52,234 +861,195 @@
 
 <main>
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__grid">
-        <div>
-          <div class="hero__eyebrow animate-fade-up">
-            <span class="tag-chip"><span class="dot"></span><span data-i18n="available-projects">Disponible pour de nouveaux projets</span></span>
-          </div>
-          <h1 class="hero__title animate-fade-up delay-1">
-            <span data-i18n="hero-line1">Développez plus vite.</span><br>
-            <span data-i18n="hero-line2">Vendez mieux.</span><br>
-            <span class="accent" data-i18n="hero-line3">Passez à l'échelle sans chaos.</span>
+  <section class="hero-new">
+    <div class="container-new">
+      <div class="hero-grid">
+        <div class="reveal-fade">
+          <div class="hero-badge"><span class="dot"></span><span data-i18n="available-projects">Available for projects</span></div>
+          <h1 class="hero-title">
+            <span data-i18n="hero-line1">We redesign</span><br>
+            <span data-i18n="hero-line2">outdated websites</span><br>
+            <span class="accent" data-i18n="hero-line3">into lead-generating</span><br>
+            <span data-i18n="hero-line4">pages.</span>
           </h1>
-          <p class="hero__body animate-fade-up delay-2" data-i18n="hero-desc">Plateformes, sites et automatisations sur mesure conçus par quelqu'un qui livre vraiment — pas seulement un conseiller.</p>
-          <div class="hero__cta animate-fade-up delay-3">
-            <a href="contact.html" class="btn-hero btn-hero--dark" data-i18n="meet-dev">Rencontrez votre développeur <span class="material-symbols-outlined">arrow_forward</span></a>
-            <a href="portfolio.html" class="btn-hero btn-hero--outline" data-i18n="see-work">Voir nos réalisations</a>
+          <p class="hero-desc" data-i18n="hero-desc">Start with a homepage redesign. Expand to a full website or system when needed.</p>
+          <div class="hero-buttons">
+            <a href="contact.html" class="btn-primary-new" data-i18n="start-project">Start Project <span class="material-symbols-outlined">arrow_forward</span></a>
+            <a href="contact.html" class="btn-outline-new" data-i18n="get-quote">Get a Quote</a>
           </div>
         </div>
-        <div class="hero__visual animate-fade-up delay-4">
-          <div class="hero__card">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Dashboard analytique" width="800" height="500" loading="eager"  fetchpriority="high"/>
-          </div>
-          <div class="hero__stat">
-            <div class="hero__stat-row">
-              <div class="hero__stat-icon"><span class="material-symbols-outlined">trending_up</span></div>
-              <div><p class="hero__stat-label" data-i18n="conversion-label">Hausse conversion</p><p class="hero__stat-value">+690%</p></div>
-            </div>
-            <div class="hero__stat-bar"><div class="hero__stat-fill"></div></div>
-          </div>
+        <div class="hero-image reveal-fade">
+          <img src="https://lh3.googleusercontent.com/aida/ADBb0uiA5LIFKEwf9FoH4NB_m9zxz_WaeC3DHzIfE45DlLy85e_CzPox9Oz_ecHWO9oWtIiSFqXOaCPYF2GeK1jjMFrTljEV7wVhiet1wYsd7iJSof3-2UYacMTdUj7QLZ0Zx4leynNZNb25z3Z5TeUnIa4m4jpbwppKJuJpdVi2gR7EJLMZz0QU7i7AWfj900rZWDk0JrwrNZ0ze2zu2BFdZbDNaxDSWXkmeD9AI4XdjOE66keyjEi35K_oSH2H3b5tHku4QnVQuIrqPd4" alt="Website Redesign Showcase" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Credibility Strip -->
-  <section class="strip">
-    <div class="container">
-      <div class="strip__grid">
-        <div class="strip__item"><p class="strip__num">4+ Ans</p><p class="strip__desc" data-i18n="exp-fullstack">Expérience Full-Stack</p></div>
-        <div class="strip__item"><p class="strip__num">100%</p><p class="strip__desc" data-i18n="client-satisfaction">Satisfaction Client</p></div>
-        <div class="strip__item"><p class="strip__num">0.1% → 7%</p><p class="strip__desc" data-i18n="conversion-boost">Boost de Conversion</p></div>
-        <div class="strip__item"><p class="strip__num">Elite</p><p class="strip__desc" data-i18n="custom-platforms">Plateformes sur mesure</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Preview -->
-  <section class="services">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 data-i18n="services-title">Concentrez-vous sur l'essentiel.<br>Je bâtis le reste.</h2>
-        <p data-i18n="services-desc">Nous éliminons le superflu pour livrer des outils haute performance qui résolvent vos vrais problèmes business.</p>
-      </div>
-      <div class="services__grid">
-        <article class="service-card">
-          <div class="service-card__icon"><span class="material-symbols-outlined">rocket_launch</span></div>
-          <h3 data-i18n="service1-title">Création & Lancement</h3>
-          <ul><li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service1-item1">Sites Next.js & SEO</span></li>
-          <li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service1-item2">Plateformes SaaS & Dashboards</span></li>
-          <li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service1-item3">Landing Pages haute conversion</span></li></ul>
-        </article>
-        <article class="service-card">
-          <div class="service-card__icon"><span class="material-symbols-outlined">settings_suggest</span></div>
-          <h3 data-i18n="service2-title">Automatisation & Scale</h3>
-          <ul><li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service2-item1">Systèmes CRM sur mesure</span></li>
-          <li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service2-item2">Moteurs de réservation</span></li>
-          <li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service2-item3">Workflow & Email Automation</span></li></ul>
-        </article>
-        <article class="service-card">
-          <div class="service-card__icon"><span class="material-symbols-outlined">payments</span></div>
-          <h3 data-i18n="service3-title">Monétisation</h3>
-          <ul><li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service3-item1">Intégrations Stripe</span></li>
-          <li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service3-item2">Systèmes d'abonnement SaaS</span></li>
-          <li><span class="material-symbols-outlined">check_circle</span> <span data-i18n="service3-item3">Tunnels de vente optimisés</span></li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Work -->
-  <section class="work">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 data-i18n="work-title">Des résultats concrets.</h2>
-        <p data-i18n="work-desc">Nous ne créons pas des fonctionnalités. Nous créons des résultats.</p>
-      </div>
-      <div class="work__grid">
-        <article class="project-card reveal">
-          <div class="overflow-wrap"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=700&q=70" alt="Booking engine" width="700" height="400" loading="lazy" /></div>
-          <div class="project-card__body">
-            <div class="project-card__header"><h3 data-i18n="project1-title">Hôtellerie Scale-Up</h3><span class="project-card__metric">+6.9% CR</span></div>
-            <p data-i18n="project1-desc">Refonte complète d'un moteur de réservation fragmenté en une plateforme unifiée. Augmentation du taux de conversion de 0.1% à 7% en 3 mois.</p>
-            <div class="project-card__tags"><span class="project-card__tag">Next.js</span><span class="project-card__tag">Stripe</span></div>
-          </div>
-        </article>
-        <article class="project-card reveal">
-          <div class="overflow-wrap"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=700&q=70" alt="CRM dashboard" width="700" height="400" loading="lazy" /></div>
-          <div class="project-card__body">
-            <div class="project-card__header"><h3 data-i18n="project2-title">CRM Automatisé</h3><span class="project-card__metric">500 leads/j</span></div>
-            <p data-i18n="project2-desc">Outil interne sur mesure pour gérer plus de 500 leads quotidiens sans aucune saisie manuelle via des webhooks personnalisés.</p>
-            <div class="project-card__tags"><span class="project-card__tag">Node.js</span><span class="project-card__tag">MongoDB</span></div>
-          </div>
-        </article>
-        <article class="project-card reveal">
-          <div class="project-card__body" style="padding:2.5rem">
-            <div style="background:rgba(0,89,197,.08);width:48px;height:48px;border-radius:.375rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem"><span class="material-symbols-outlined" style="color:var(--color-surface-tint)">api</span></div>
-            <div class="project-card__header"><h3 data-i18n="project3-title">Paiement & Onboarding</h3><span class="project-card__metric">-22% churn</span></div>
-            <p data-i18n="project3-desc">Intégration fluide pour une plateforme de coaching haut de gamme, réduisant le churn de 22%.</p>
-            <div class="project-card__tags"><span class="project-card__tag">Laravel</span><span class="project-card__tag">React</span></div>
-          </div>
-        </article>
-        <article class="project-card reveal">
-          <div class="overflow-wrap"><img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&q=70" alt="Custom booking" width="700" height="400" loading="lazy" /></div>
-          <div class="project-card__body">
-            <div class="project-card__header"><h3 data-i18n="project4-title">Moteur de Réservation Custom</h3></div>
-            <p data-i18n="project4-desc">Solution en marque blanche pour les entreprises basées sur la prise de rendez-vous avec rappels SMS automatisés.</p>
-            <div class="project-card__tags"><span class="project-card__tag">React</span><span class="project-card__tag">Node.js</span><span class="project-card__tag">Twilio</span></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="process" id="how-it-works">
-    <div class="container">
-      <div class="process__grid">
-        <div>
-          <h2 class="reveal" data-i18n="process-title">Le chemin de l'exécution.</h2>
-          <p class="process__intro reveal" data-i18n="process-desc">Pas de comités. Pas d'agences lourdes. Juste une communication directe et des itérations rapides.</p>
-          <div class="process__steps">
-            <div class="step reveal"><div class="step__num">1</div><div class="step__content"><h4 data-i18n="step1-title">Rencontrez votre développeur</h4><p data-i18n="step1-desc">Un appel introductif de 15 min pour vérifier l'adéquation. On parle objectifs business, pas seulement code.</p></div></div>
-            <div class="step reveal"><div class="step__num">2</div><div class="step__content"><h4 data-i18n="step2-title">Obtenez un plan clair</h4><p data-i18n="step2-desc">Vous recevez un périmètre fixe, un calendrier transparent et un prix garanti. Aucune surprise.</p></div></div>
-            <div class="step reveal"><div class="step__num">3</div><div class="step__content"><h4 data-i18n="step3-title">Construisez & Lancez vite</h4><p data-i18n="step3-desc">Rapports de progression hebdomadaires et ligne directe Slack/WhatsApp avec la personne qui code vraiment.</p></div></div>
-          </div>
+  <!-- Problem Section -->
+  <section class="problem-section">
+    <div class="container-new">
+      <div class="problem-grid">
+        <div class="problem-sticky reveal-fade">
+          <h2 data-i18n="problem-title">Is your website holding you back?</h2>
+          <a href="contact.html" class="btn-primary-new" data-i18n="start-redesign">Start with a homepage redesign</a>
         </div>
-        <div class="terminal reveal">
-          <div class="terminal__bar"><span class="terminal__dot terminal__dot--red"></span><span class="terminal__dot terminal__dot--yellow"></span><span class="terminal__dot terminal__dot--green"></span></div>
-          <div class="terminal__body">
-            <div class="terminal__line"><span class="terminal__time">09:12</span><span>[EXECUTION] Périmètre projet finalisé...</span></div>
-            <div class="terminal__line"><span class="terminal__time">10:45</span><span>[DEV] Implémentation session Stripe Checkout...</span></div>
-            <div class="terminal__line terminal__line--blue"><span class="terminal__time">14:20</span><span>● [BUILD] Déploiement Vercel réussi</span></div>
-            <div class="terminal__line"><span class="terminal__time">16:00</span><span>[QA] Score de performance : 98/100</span></div>
-            <div class="terminal__line terminal__line--gold"><span class="terminal__time">17:30</span><span>● [READY] Environnement de staging prêt</span></div>
-          </div>
-          <div class="terminal__tech-logos">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="28" height="28" loading="lazy"/>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" width="28" height="28" loading="lazy"/>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="28" height="28" loading="lazy"/>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel" width="28" height="28" loading="lazy"/>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="28" height="28" loading="lazy"/>
-          </div>
+        <div class="problem-cards">
+          <div class="problem-card reveal-fade"><div class="icon"><span class="material-symbols-outlined">update_disabled</span></div><div><h3 data-i18n="problem1-title">Website looks outdated</h3><p data-i18n="problem1-desc">Your visual identity doesn't match the quality of your services.</p></div></div>
+          <div class="problem-card reveal-fade"><div class="icon"><span class="material-symbols-outlined">person_remove</span></div><div><h3 data-i18n="problem2-title">Not getting leads</h3><p data-i18n="problem2-desc">Visitors land but never convert because the path isn't clear.</p></div></div>
+          <div class="problem-card reveal-fade"><div class="icon"><span class="material-symbols-outlined">search_off</span></div><div><h3 data-i18n="problem3-title">Not showing up on Google</h3><p data-i18n="problem3-desc">Inconsistent structure that prevents you from ranking high.</p></div></div>
+          <div class="problem-card reveal-fade"><div class="icon"><span class="material-symbols-outlined">speed</span></div><div><h3 data-i18n="problem4-title">Pages load slowly</h3><p data-i18n="problem4-desc">Heaviness that causes 40% of users to bounce before loading.</p></div></div>
+          <div class="problem-card reveal-fade"><div class="icon"><span class="material-symbols-outlined">edit_off</span></div><div><h3 data-i18n="problem5-title">Hard to update content</h3><p data-i18n="problem5-desc">Technical debt that makes simple changes a nightmare.</p></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Preview -->
-  <section class="pricing">
-    <div class="container">
-      <div class="section-header reveal" style="text-align:center;max-width:100%">
-        <h2 data-i18n="pricing-title">Tarifs transparents. Pas de coûts cachés.</h2>
-        <p data-i18n="pricing-desc">Faites évoluer votre investissement en même temps que votre business.</p>
-      </div>
-      <div class="pricing__grid">
-        <div class="pricing-card reveal">
-          <p class="pricing-card__name" data-i18n="starter-name">Starter</p>
-          <p class="pricing-card__sub" data-i18n="starter-sub">Parfait pour valider une idée.</p>
-          <div class="pricing-card__price"><p class="pricing-card__amount">dès 800 €</p><p class="pricing-card__currency">~3 500 PLN</p></div>
-          <ul><li><span class="material-symbols-outlined">check</span> <span data-i18n="starter-feat1">Landing Page / Petit Site</span></li>
-          <li><span class="material-symbols-outlined">check</span> <span data-i18n="starter-feat2">Optimisé Mobile</span></li>
-          <li><span class="material-symbols-outlined">check</span> <span data-i18n="starter-feat3">Setup Vitesse & SEO</span></li></ul>
-          <a href="contact.html" class="btn-pricing btn-pricing--outline" data-i18n="choose-starter">Choisir Starter</a>
+  <!-- Homepage Redesign Focus -->
+  <section class="redesign-focus">
+    <div class="container-new">
+      <div class="redesign-card reveal-fade">
+        <div class="redesign-content">
+          <h2 data-i18n="redesign-title">Fastest way to improve your website without a full rebuild.</h2>
+          <div class="redesign-features">
+            <div class="redesign-feature"><span class="material-symbols-outlined">check_circle</span><span data-i18n="redesign-feat1">Lower cost</span></div>
+            <div class="redesign-feature"><span class="material-symbols-outlined">check_circle</span><span data-i18n="redesign-feat2">Faster delivery</span></div>
+            <div class="redesign-feature"><span class="material-symbols-outlined">check_circle</span><span data-i18n="redesign-feat3">Immediate improvements</span></div>
+            <div class="redesign-feature"><span class="material-symbols-outlined">check_circle</span><span data-i18n="redesign-feat4">No full rebuild</span></div>
+          </div>
         </div>
-        <div class="pricing-card pricing-card--featured reveal">
-          <div class="pricing-card__badge" data-i18n="most-popular">Le plus populaire</div>
-          <p class="pricing-card__name" data-i18n="growth-name">Growth</p>
-          <p class="pricing-card__sub" data-i18n="growth-sub">Développez votre présence.</p>
-          <div class="pricing-card__price"><p class="pricing-card__amount">1 500 € – 3 000 €</p></div>
-          <ul><li><span class="material-symbols-outlined">check</span> <span data-i18n="growth-feat1">Plateforme complète / Multi-pages</span></li>
-          <li><span class="material-symbols-outlined">check</span> <span data-i18n="growth-feat2">Intégrations CRM & API</span></li>
-          <li><span class="material-symbols-outlined">check</span> <span data-i18n="growth-feat3">Automatisations avancées</span></li></ul>
-          <a href="contact.html" class="btn-pricing btn-pricing--dark" data-i18n="choose-growth">Passer à Growth</a>
-        </div>
-        <div class="pricing-card reveal">
-          <p class="pricing-card__name" data-i18n="custom-name">Custom</p>
-          <p class="pricing-card__sub" data-i18n="custom-sub">Exécution à grande échelle.</p>
-          <div class="pricing-card__price"><p class="pricing-card__amount">3 000 € +</p></div>
-          <ul><li><span class="material-symbols-outlined">check</span> <span data-i18n="custom-feat1">Plateformes SaaS complexes</span></li>
-          <li><span class="material-symbols-outlined">check</span> <span data-i18n="custom-feat2">Dashboards avancés</span></li>
-          <li><span class="material-symbols-outlined">check</span> <span data-i18n="custom-feat3">Automatisations gérées</span></li></ul>
-          <a href="contact.html" class="btn-pricing btn-pricing--outline" data-i18n="contact-quote">Contact pour devis</a>
-        </div>
-      </div>
-      <div class="pricing__note reveal">
-        <p data-i18n="flexible-payments-title">Options de paiement flexibles disponibles</p>
-        <p data-i18n="flexible-payments-desc">50% à la commande / 50% à la livraison, ou paiement mensuel.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Preview -->
-  <section class="about">
-    <div class="container">
-      <div class="about__grid">
-        <div class="about__portrait-wrap reveal">
-          <div class="about__portrait"><img src="./images/Foued.png" alt="Foued Douiri" width="600" height="600" loading="lazy" fetchpriority="high"/></div>
-          <div class="about__name-tag"><strong>Foued Douiri</strong><span data-i18n="founder-title">Fondateur & Lead Dev</span></div>
-        </div>
-        <div class="reveal">
-          <h2 data-i18n="about-title">Direct. Humain. Efficace.</h2>
-          <div class="about__text"><p data-i18n="about-desc1">Lead Labs est centré sur l'exécution. J'ai remarqué que trop d'entreprises s'enlisent dans le "piège du conseil" — payer pour des recommandations sans jamais voir un produit qui fonctionne réellement.</p>
-          <p data-i18n="about-desc2">En engageant Lead Labs, vous travaillez directement avec moi. Pas de gestionnaires de compte, pas de développeurs juniors. Juste un expert qui sait livrer des produits générateurs de revenus.</p>
-          <p data-i18n="about-desc3">Je traite chaque projet comme s'il s'agissait de ma propre entreprise, en me focalisant sur le chemin le plus court vers le ROI.</p></div>
+        <div class="redesign-preview">
+          <div class="line"></div>
+          <div class="line short"></div>
+          <div class="line"></div>
+          <div class="button"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="final-cta">
-    <div class="container">
-      <h2 data-i18n="cta-title">Arrêtez de trop réfléchir.<br>Bâtissons quelque chose qui marche.</h2>
-      <a href="contact.html" class="btn-cta" data-i18n="meet-dev-cta">Rencontrez votre développeur</a>
+  <!-- Services Bento Grid -->
+  <section class="bento-services" id="services">
+    <div class="container-new">
+      <div class="bento-header reveal-fade"><h2 data-i18n="services-title-new">Start with a better website. Scale when needed.</h2><p data-i18n="services-sub">We offer a modular approach to digital excellence.</p></div>
+      <div class="bento-grid">
+        <div class="bento-item reveal-fade"><span class="material-symbols-outlined">auto_fix_high</span><h3 data-i18n="bento1-title">Website redesign</h3><p data-i18n="bento1-desc">A focused tactical intervention to modernize your core pages and boost conversion.</p><a href="services.html" class="bento-link" data-i18n="learn-more">Learn More <span class="material-symbols-outlined">north_east</span></a></div>
+        <div class="bento-item reveal-fade"><span class="material-symbols-outlined">precision_manufacturing</span><h3 data-i18n="bento2-title">Automation & systems</h3><p data-i18n="bento2-desc">Streamlining your business processes with custom integrations and workflows.</p><a href="services.html" class="bento-link" data-i18n="learn-more">Learn More <span class="material-symbols-outlined">north_east</span></a></div>
+        <div class="bento-item reveal-fade"><span class="material-symbols-outlined">architecture</span><h3 data-i18n="bento3-title">Custom builds</h3><p data-i18n="bento3-desc">End-to-end development of bespoke digital platforms tailored to your specific needs.</p><a href="services.html" class="bento-link" data-i18n="learn-more">Learn More <span class="material-symbols-outlined">north_east</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent improvements (Portfolio) -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container-new">
+      <div class="portfolio-header reveal-fade"><h2 data-i18n="portfolio-title">Recent improvements</h2></div>
+      <div class="portfolio-grid-new">
+        <div class="portfolio-card-new reveal-fade"><div class="aspect-video"><img alt="Custom dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv8qZS4iEMMlRz-Pdemy3xQx1_qZIYPNIVwgEIrz_R_Oge37_1JpP1asvfcxsHxZyc957PsS1t4FUKGdmk463ws_z5LTUu8fElSUHKThN6CjPRlDkj_qQLGvOI0VDY5pqNuSIKpFC-0lv7-0HEOTJKtQYEmPrqnvlSDpcaaPduWOufbTx2eSZVLrxgcjvgzIt7mhgATcZowY-M01j0OU0HEqDFaCyxD6J4tMIxCZNqrB3kv3RpjWvNwWg-qC2q84Ty6ZxffljskFFc" /></div><div class="portfolio-card-body"><h3 data-i18n="portfolio1-title">Custom dashboard</h3><div class="portfolio-tag" data-i18n="portfolio1-tag">Internal tool</div><p class="portfolio-description" data-i18n="portfolio1-desc">Automated reporting and tracking</p></div></div>
+        <div class="portfolio-card-new reveal-fade"><div class="aspect-video"><img alt="Booking system" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrV2VPeB0UMFgd6ScGGMgdlESdmt9H7uNKO5insElQNB6XKq8_xIAlt2UTcJ_adBC8efGNVpM7PYfTeQeZ-c06iMt_iDbGTo9ZmoXyo8uZMBXiReVEL2LHWxjIfmEwnZ0aSwAGiRxseodq-dSoZL7knzFfmGpG26d4HmpZnKzzSamTtS5xM1_BKUAPaH1zZR7g0no_xfQ-zC0BmZUUaaDKUxmrlexUQQgNts1_TeSOZUFSEP9olNLsUwTnfcbN_DVwbQ9KR04SmkVc" /></div><div class="portfolio-card-body"><h3 data-i18n="portfolio2-title">Booking system</h3><div class="portfolio-tag" data-i18n="portfolio2-tag">Service business</div><p class="portfolio-description" data-i18n="portfolio2-desc">Automated appointments and reminders</p></div></div>
+        <div class="portfolio-card-new reveal-fade"><div class="aspect-video"><img alt="Business website" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv8qZS4iEMMlRz-Pdemy3xQx1_qZIYPNIVwgEIrz_R_Oge37_1JpP1asvfcxsHxZyc957PsS1t4FUKGdmk463ws_z5LTUu8fElSUHKThN6CjPRlDkj_qQLGvOI0VDY5pqNuSIKpFC-0lv7-0HEOTJKtQYEmPrqnvlSDpcaaPduWOufbTx2eSZVLrxgcjvgzIt7mhgATcZowY-M01j0OU0HEqDFaCyxD6J4tMIxCZNqrB3kv3RpjWvNwWg-qC2q84Ty6ZxffljskFFc" /></div><div class="portfolio-card-body"><h3 data-i18n="portfolio3-title">Business website</h3><div class="portfolio-tag" data-i18n="portfolio3-tag">Small company</div><p class="portfolio-description" data-i18n="portfolio3-desc">Clear structure and faster loading.</p></div></div>
+        <div class="portfolio-card-new reveal-fade"><div class="aspect-video"><img alt="Homepage redesign" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrV2VPeB0UMFgd6ScGGMgdlESdmt9H7uNKO5insElQNB6XKq8_xIAlt2UTcJ_adBC8efGNVpM7PYfTeQeZ-c06iMt_iDbGTo9ZmoXyo8uZMBXiReVEL2LHWxjIfmEwnZ0aSwAGiRxseodq-dSoZL7knzFfmGpG26d4HmpZnKzzSamTtS5xM1_BKUAPaH1zZR7g0no_xfQ-zC0BmZUUaaDKUxmrlexUQQgNts1_TeSOZUFSEP9olNLsUwTnfcbN_DVwbQ9KR04SmkVc" /></div><div class="portfolio-card-body"><h3 data-i18n="portfolio4-title">Homepage redesign</h3><div class="portfolio-tag" data-i18n="portfolio4-tag">Lead generation</div><p class="portfolio-description" data-i18n="portfolio4-desc">Lead-focused layout and messaging.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (stronger floating shadow) -->
+  <section class="testimonials">
+    <div class="container-new">
+      <div class="portfolio-header reveal-fade"><h2 data-i18n="testimonials-title">What clients say</h2></div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal-fade"><div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" alt="Client" /></div><div class="testimonial-name" data-i18n="testimonial1-name">Founder</div><div class="testimonial-role" data-i18n="testimonial1-role">Service Business</div><p class="testimonial-text" data-i18n="testimonial1-text">"Fast turnaround and clear communication. The redesign improved our conversions quickly."</p></div>
+        <div class="testimonial-card reveal-fade"><div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="Client" /></div><div class="testimonial-name" data-i18n="testimonial2-name">Consultant</div><div class="testimonial-role" data-i18n="testimonial2-role">Independent</div><p class="testimonial-text" data-i18n="testimonial2-text">"Started with a homepage redesign and later expanded to a full website. Smooth process."</p></div>
+        <div class="testimonial-card reveal-fade"><div class="testimonial-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop" alt="Client" /></div><div class="testimonial-name" data-i18n="testimonial3-name">Owner</div><div class="testimonial-role" data-i18n="testimonial3-role">Local Retail</div><p class="testimonial-text" data-i18n="testimonial3-text">"Clear pricing, flexible payments and fast delivery. Exactly what we needed."</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-landing" id="pricing">
+    <div class="container-new">
+      <div class="portfolio-header reveal-fade"><h2 data-i18n="pricing-title-landing">Simple pricing. No surprises.</h2><p data-i18n="pricing-sub-landing">Invest in results, not guesswork.</p></div>
+      <div class="pricing-grid-landing">
+        <div class="pricing-card-landing reveal-fade"><h3 data-i18n="starter-name">Redesign</h3><div class="pricing-price">€700</div><ul class="pricing-features"><li><span class="material-symbols-outlined">check</span> <span data-i18n="starter-feat1">Homepage focus</span></li><li><span class="material-symbols-outlined">check</span> <span data-i18n="starter-feat2">UX/UI overhaul</span></li><li><span class="material-symbols-outlined">check</span> <span data-i18n="starter-feat3">5-day delivery</span></li></ul><a href="contact.html" class="btn-pricing-landing btn-pricing-outline" data-i18n="select-plan">Select</a></div>
+        <div class="pricing-card-landing featured reveal-fade"><div class="badge" data-i18n="most-popular">Most Popular</div><h3 data-i18n="growth-name">Business</h3><div class="pricing-price">€1,500</div><ul class="pricing-features"><li><span class="material-symbols-outlined">check</span> <span data-i18n="growth-feat1">Full multi-page site</span></li><li><span class="material-symbols-outlined">check</span> <span data-i18n="growth-feat2">SEO Optimization</span></li><li><span class="material-symbols-outlined">check</span> <span data-i18n="growth-feat3">CMS Integration</span></li></ul><a href="contact.html" class="btn-pricing-landing btn-pricing-light" data-i18n="select-plan">Select Plan</a></div>
+        <div class="pricing-card-landing reveal-fade"><h3 data-i18n="custom-name">Custom</h3><div class="pricing-price">€3,000<span style="font-size:1rem;">+</span></div><ul class="pricing-features"><li><span class="material-symbols-outlined">check</span> <span data-i18n="custom-feat1">Custom Web Apps</span></li><li><span class="material-symbols-outlined">check</span> <span data-i18n="custom-feat2">Advanced Automation</span></li><li><span class="material-symbols-outlined">check</span> <span data-i18n="custom-feat3">Priority Support</span></li></ul><a href="contact.html" class="btn-pricing-landing btn-pricing-outline" data-i18n="inquire">Inquire</a></div>
+      </div>
+      <!-- Flexible payment options – more height and spacing -->
+      <div class="flexible-payments-landing">
+        <h4 data-i18n="flexible-payments-title-landing">Flexible payment options</h4>
+        <p data-i18n="flexible-payments-desc-landing">Split payments available.</p>
+        <div class="flexible-grid-landing">
+          <div><div class="font-headline font-bold text-lg mb-2" data-i18n="split-5050">Split</div><p class="text-sm text-on-surface-variant" data-i18n="split-desc">Pay 50% upfront and 50% on completion.</p></div>
+          <div><div class="font-headline font-bold text-lg mb-2" data-i18n="milestone-payments">Milestone</div><p class="text-sm text-on-surface-variant" data-i18n="milestone-desc">Payments released as we hit project goals.</p></div>
+          <div><div class="font-headline font-bold text-lg mb-2" data-i18n="monthly-payments">Monthly</div><p class="text-sm text-on-surface-variant" data-i18n="monthly-desc">Retainer options for ongoing support.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works (tight spacing, narrower width) -->
+  <section class="steps-new" id="how-it-works">
+    <div class="container-new">
+      <div class="portfolio-header"><h2 data-i18n="process-title-new">How it works</h2></div>
+      <div class="howit-steps-container" id="howitStepsContainer">
+        <div class="howit-step-item">
+          <div class="howit-step-circle">1</div>
+          <div class="howit-step-text"><h3 data-i18n="step1-title-new">Talk directly with your developer</h3><p data-i18n="step1-desc-new">Direct access to the technical mind building your project from day one. No sales fluff.</p></div>
+        </div>
+        <div class="howit-step-item">
+          <div class="howit-step-circle">2</div>
+          <div class="howit-step-text"><h3 data-i18n="step2-title-new">Get a clear plan</h3><p data-i18n="step2-desc-new">Timeline, pricing and payment options.</p></div>
+        </div>
+        <div class="howit-step-item">
+          <div class="howit-step-circle">3</div>
+          <div class="howit-step-text"><h3 data-i18n="step3-title-new">Build and review</h3><p data-i18n="step3-desc-new">Iterative development with feedback loops every 48 hours to ensure alignment.</p></div>
+        </div>
+        <div class="howit-step-item">
+          <div class="howit-step-circle">4</div>
+          <div class="howit-step-text"><h3 data-i18n="step4-title-new">Launch and support</h3><p data-i18n="step4-desc-new">Seamless deployment and active monitoring to guarantee post-launch success.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Developer Profile (more height, better alignment) -->
+  <section class="developer-section">
+    <div class="container-new">
+      <div class="developer-grid">
+        <div class="developer-card reveal-fade">
+          <div class="developer-badge"><span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> <span data-i18n="available-badge">Available for new projects</span></div>
+          <div class="developer-avatar"><img src="./images/Foued.png" alt="Foued Douiri" /></div>
+          <h3 class="developer-name" data-i18n="dev-name">Foued Douiri</h3>
+          <div class="developer-title" data-i18n="dev-title">Senior Full-Stack Developer</div>
+          <div class="developer-tags"><span class="developer-tag" data-i18n="dev-tag1">Certified: can build anything</span><span class="developer-tag" data-i18n="dev-tag2">Builds the hard stuff</span><span class="developer-tag" data-i18n="dev-tag3">Yes, even that</span></div>
+          <p data-i18n="dev-desc">No middleman. No project managers. Just direct engineering expertise to transform your vision into a high-performance digital asset.</p>
+        </div>
+        <div class="reveal-fade">
+          <div class="timeline-list">
+            <div class="timeline-item"><span data-i18n="timeline1-title">Homepage redesign</span><span data-i18n="timeline1-days">3–5 days</span></div>
+            <div class="timeline-item"><span data-i18n="timeline2-title">Business website</span><span data-i18n="timeline2-days">1–2 weeks</span></div>
+            <div class="timeline-item"><span data-i18n="timeline3-title">Custom platform</span><span data-i18n="timeline3-days">2–4 weeks</span></div>
+          </div>
+          <div class="timeline-footer-text"><p class="text-sm text-on-surface-variant font-semibold flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-surface-tint"></span> <span data-i18n="timeline-footer">Clear scope. Direct communication. Flexible payments.</span></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA (more height) -->
+  <section class="final-cta-new">
+    <div class="container-new">
+      <h2 data-i18n="final-title">Start small. Expand when needed.</h2>
+      <p data-i18n="final-desc">Homepage redesign, new website, automation or custom platform — we’ll help you choose the right starting point.</p>
+      <div class="final-buttons">
+        <a href="contact.html" class="btn-white" data-i18n="start-project">Start Project</a>
+        <a href="contact.html" class="btn-outline-white" data-i18n="book-call">Book a Call</a>
+        <a href="contact.html" class="btn-outline-white" data-i18n="get-quote">Get a Quote</a>
+      </div>
     </div>
   </section>
 </main>
 
+<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container">
     <div class="footer__inner">
@@ -290,5 +1060,46 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  (function() {
+    // Standard fade‑up sections
+    const reveals = document.querySelectorAll('.reveal-fade');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // How it works steps – staggered fade/slide, resets when out of view
+    const stepsContainer = document.getElementById('howitStepsContainer');
+    if (stepsContainer) {
+      const steps = Array.from(stepsContainer.querySelectorAll('.howit-step-item'));
+      let stepObserver = null;
+
+      const animateSteps = (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            steps.forEach((step, idx) => {
+              setTimeout(() => {
+                step.classList.add('visible');
+              }, idx * 150);
+            });
+          } else {
+            steps.forEach(step => {
+              step.classList.remove('visible');
+            });
+          }
+        });
+      };
+
+      stepObserver = new IntersectionObserver(animateSteps, { threshold: 0.2 });
+      stepObserver.observe(stepsContainer);
+    }
+  })();
+</script>
 </body>
 </html>

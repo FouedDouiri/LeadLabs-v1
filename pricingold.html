@@ -3,103 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary SEO Meta -->
-  <title>Pricing | Transparent Web Development & Automation Costs | Lead Labs</title>
-  <meta name="description" content="See our simple, transparent pricing for custom websites, landing pages, and automation systems. From €700. No hidden costs. Flexible payment options available." />
-  <meta name="keywords" content="pricing, web development pricing, custom website cost, automation pricing, lead labs pricing, freelance developer rates, transparent pricing" />
-  <meta name="author" content="Foued Douiri - Lead Labs" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://leadlabs.dev/pricing.html" />
-
-  <!-- Alternate language versions (adjust if you have separate EN URLs) -->
-  <link rel="alternate" hreflang="fr" href="https://leadlabs.dev/pricing.html" />
-  <link rel="alternate" hreflang="en" href="https://leadlabs.dev/en/pricing.html" />
-
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Pricing | Lead Labs – Transparent & Flexible" />
-  <meta property="og:description" content="From €700 for a landing page to €3,000+ for custom automation. See what's included and choose the right plan." />
-  <meta property="og:url" content="https://leadlabs.dev/pricing.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://leadlabs.dev/images/og-pricing.jpg" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:site_name" content="Lead Labs" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Lead Labs Pricing – Simple, Transparent" />
-  <meta name="twitter:description" content="Check our pricing plans for websites, platforms, and automation. No surprises." />
-  <meta name="twitter:image" content="https://leadlabs.dev/images/og-pricing.jpg" />
-
-  <!-- Favicon -->
+  <title>Pricing | Lead Labs</title>
+  <meta name="description" content="Simple, transparent pricing for custom websites, platforms and automations. No hidden costs." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23000'/><text x='6' y='24' font-size='20' fill='%232e7fff' font-family='sans-serif' font-weight='900'>L</text></svg>" />
-
-  <!-- CSS & Fonts -->
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-
-  <!-- JSON‑LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Lead Labs Development Services",
-    "description": "Custom website and automation development with transparent pricing.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Lead Labs"
-    },
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Landing Page / Homepage Redesign",
-        "price": "700",
-        "priceCurrency": "EUR",
-        "description": "New homepage structure, clear messaging, lead-focused layout, CTA placement, faster loading.",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "name": "Business Website",
-        "price": "1500",
-        "priceCurrency": "EUR",
-        "description": "4–6 pages, lead-focused homepage, clear service structure, contact/booking setup, SEO-ready.",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "name": "Custom Build / Automation",
-        "price": "3000",
-        "priceCurrency": "EUR",
-        "description": "Custom platform, automation setup, dashboard interface, integrations, scalable structure.",
-        "availability": "https://schema.org/InStock"
-      }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://leadlabs.dev/"
-    },{
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Pricing",
-      "item": "https://leadlabs.dev/pricing.html"
-    }]
-  }
-  </script>
-
   <style>
-    /* ===== EXISTING STYLES (your original utilities) ===== */
+    /* Additional spacing utilities for this page only */
     .section-spacing { padding: 5rem 2rem; }
     .section-spacing-sm { padding: 4rem 2rem; }
     .text-center { text-align: center; }
@@ -110,8 +20,7 @@
     .mb-16 { margin-bottom: 4rem; }
     .mt-8 { margin-top: 2rem; }
     .flex-between { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem; }
-    
-    /* Hero */
+    /* Hero specific */
     .hero-pricing {
       position: relative;
       padding-top: 10rem;
@@ -178,7 +87,6 @@
       font-size: 0.9rem;
       transition: all 0.2s;
       display: inline-block;
-      cursor: pointer;
     }
     .btn-hero-primary:hover {
       transform: translateY(-2px);
@@ -195,196 +103,10 @@
       font-size: 0.9rem;
       transition: all 0.2s;
       display: inline-block;
-      cursor: pointer;
     }
     .btn-hero-secondary:hover {
       background: var(--color-surface-container-low);
     }
-    
-    /* ===== ANIMATION & INTERACTION STYLES ===== */
-    
-    /* 1. Card hover scale + pointer */
-    .pricing-card-new {
-      cursor: pointer;
-      transition: transform 0.35s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.35s cubic-bezier(0.2, 0, 0, 1);
-      box-shadow: 0 20px 40px -20px rgba(13, 28, 50, 0.18), 0 10px 20px -15px rgba(13, 28, 50, 0.10);
-    }
-    .pricing-card-new:hover {
-      transform: scale(1.02);
-      box-shadow: 0 40px 80px -30px rgba(13, 28, 50, 0.25), 0 20px 40px -25px rgba(13, 28, 50, 0.15);
-    }
-    @media (min-width: 1024px) {
-      .pricing-card-new--featured {
-        transform: translateY(-1rem);
-        box-shadow: 0 30px 60px -25px rgba(13, 28, 50, 0.22), 0 15px 30px -20px rgba(13, 28, 50, 0.12);
-      }
-      .pricing-card-new--featured:hover {
-        transform: translateY(-1rem) scale(1.02);
-        box-shadow: 0 50px 100px -35px rgba(13, 28, 50, 0.28), 0 25px 50px -30px rgba(13, 28, 50, 0.18);
-      }
-    }
-    @media (max-width: 1023px) {
-      .pricing-card-new--featured:hover {
-        transform: scale(1.02);
-      }
-    }
-    
-    /* 2. Buttons and interactive elements pointer */
-    .btn-card, .btn-cta-primary, .btn-cta-secondary, .addon-chip {
-      cursor: pointer;
-    }
-    .step-number {
-      cursor: default;
-    }
-    
-    /* 3. Staggered fade-in for feature items */
-    .feature-item {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-    .feature-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* 4. Staggered fade-in for steps */
-    .step-item {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-    .step-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* 5. Tooltip for add-on chips */
-    .addon-chip {
-      position: relative;
-      cursor: help;
-      transition: all 0.2s ease;
-    }
-    .addon-chip:hover {
-      transform: translateY(-2px);
-      background: var(--color-surface-container);
-    }
-    .addon-chip::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      bottom: 120%;
-      left: 50%;
-      transform: translateX(-50%) translateY(8px);
-      background: var(--color-primary-container);
-      color: var(--color-on-primary);
-      font-family: var(--font-body);
-      font-size: 0.75rem;
-      font-weight: 500;
-      white-space: nowrap;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      z-index: 10;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .addon-chip:hover::after {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-    .addon-chip::before {
-      content: '';
-      position: absolute;
-      bottom: 120%;
-      left: 50%;
-      transform: translateX(-50%) translateY(8px);
-      border-width: 5px;
-      border-style: solid;
-      border-color: var(--color-primary-container) transparent transparent transparent;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      z-index: 10;
-    }
-    .addon-chip:hover::before {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-    @media (max-width: 640px) {
-      .addon-chip::after {
-        white-space: normal;
-        width: 180px;
-        text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .addon-chip:hover::after {
-        transform: translateX(-50%);
-      }
-    }
-    
-    /* Flexible Payment Options */
-    .payment-card {
-      background: var(--color-surface-container-lowest);
-      padding: 2rem;
-      border-radius: 0.75rem;
-      border: 1px solid rgba(197,198,205,.1);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      cursor: default;
-    }
-    .payment-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 30px -15px rgba(13,28,50,0.1);
-    }
-    .payment-icon {
-      width: 2.5rem;
-      height: 2.5rem;
-      background: var(--color-surface-container-high);
-      border-radius: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-    .payment-icon .material-symbols-outlined {
-      font-size: 1.5rem;
-      color: var(--color-surface-tint);
-    }
-    .payment-title {
-      font-family: var(--font-headline);
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-    .payment-desc {
-      font-size: 0.85rem;
-      color: var(--color-on-surface-variant);
-      line-height: 1.5;
-    }
-    .reveal-up {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-    .reveal-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .payment-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      max-width: 64rem;
-      margin: 0 auto;
-    }
-    @media (min-width: 768px) {
-      .payment-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    
     @media (max-width: 767px) {
       .section-spacing { padding: 3rem 1.5rem; }
       .section-spacing-sm { padding: 2.5rem 1.5rem; }
@@ -429,7 +151,7 @@
   <a href="contact.html" class="btn-primary" data-i18n="start-project">Start a Project</a>
 </div>
 
-<main aria-label="Pricing plans and service options">
+<main>
   <!-- Hero Section -->
   <div class="hero-pricing">
     <div class="max-width-1440" style="padding: 0 2rem;">
@@ -448,20 +170,13 @@
     </div>
   </div>
 
-  <!-- SEO descriptive paragraph (improves keyword relevance) -->
-  <div class="text-center" style="max-width: 800px; margin: 0 auto 2rem auto;">
-    <p style="font-size: 1.1rem; color: var(--color-on-surface-variant);">
-      Choose the plan that fits your project. Each option includes everything you need to launch – no hidden fees or hourly rates.
-    </p>
-  </div>
-
   <!-- Pricing Cards Section -->
   <div class="section-spacing" style="background: var(--color-surface-container-low);">
     <div class="max-width-1440">
       <div class="pricing-new-grid">
         
         <!-- Card 1 – Entry Level -->
-        <div class="pricing-card-new" onclick="window.location.href='contact.html'">
+        <div class="pricing-card-new">
           <div class="mb-8">
             <span class="card-category" data-i18n="pricing-cat-entry">Entry Level</span>
             <h3 class="card-title" data-i18n="pricing-title-entry">Landing Page / Homepage Redesign</h3>
@@ -496,7 +211,7 @@
         </div>
 
         <!-- Card 2 – Most Popular -->
-        <div class="pricing-card-new pricing-card-new--featured" onclick="window.location.href='contact.html'">
+        <div class="pricing-card-new pricing-card-new--featured">
           <span class="card-badge" data-i18n="pricing-most-popular">Most Popular</span>
           <div class="mb-8">
             <span class="card-category" data-i18n="pricing-cat-core">Core Solution</span>
@@ -532,7 +247,7 @@
         </div>
 
         <!-- Card 3 – Enterprise -->
-        <div class="pricing-card-new" onclick="window.location.href='contact.html'">
+        <div class="pricing-card-new">
           <div class="mb-8">
             <span class="card-category" data-i18n="pricing-cat-enterprise">Enterprise</span>
             <h3 class="card-title" data-i18n="pricing-title-enterprise">Custom Build / Automation</h3>
@@ -569,33 +284,6 @@
     </div>
   </div>
 
-  <!-- Flexible Payment Options Section -->
-  <div class="section-spacing" style="background: var(--color-surface);">
-    <div class="max-width-1440">
-      <div class="text-center" style="margin-bottom: 3rem;">
-        <h2 class="card-title" style="font-size: 2.5rem; margin-bottom: 1rem;" data-i18n="payment-flex-title">Flexible payment options</h2>
-        <p style="font-size: 1.1rem; color: var(--color-on-surface-variant);" data-i18n="payment-flex-sub">We structure payments based on project size</p>
-      </div>
-      <div class="payment-grid" id="paymentGrid">
-        <div class="payment-card reveal-up">
-          <div class="payment-icon"><span class="material-symbols-outlined">splitscreen</span></div>
-          <h3 class="payment-title" data-i18n="payment-option1-title">50/50 split</h3>
-          <p class="payment-desc" data-i18n="payment-option1-desc">50% upfront. 50% on delivery. Standard for most projects.</p>
-        </div>
-        <div class="payment-card reveal-up">
-          <div class="payment-icon"><span class="material-symbols-outlined">calendar_today</span></div>
-          <h3 class="payment-title" data-i18n="payment-option2-title">Monthly payments</h3>
-          <p class="payment-desc" data-i18n="payment-option2-desc">Spread the cost across the build. Available for larger projects.</p>
-        </div>
-        <div class="payment-card reveal-up">
-          <div class="payment-icon"><span class="material-symbols-outlined">layers</span></div>
-          <h3 class="payment-title" data-i18n="payment-option3-title">Milestone-based</h3>
-          <p class="payment-desc" data-i18n="payment-option3-desc">Pay per phase as we progress. Best for custom builds.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- What You Get (standard features) -->
   <div class="section-spacing" style="background: var(--color-surface);">
     <div class="max-width-1440">
@@ -605,7 +293,7 @@
           <p style="font-size: 1.2rem; color: var(--color-on-surface-variant);" data-i18n="pricing-standard-desc">We don't just build sites; we build execution-ready tools that perform from day one.</p>
         </div>
       </div>
-      <div class="features-grid" id="featuresGrid">
+      <div class="features-grid">
         <div class="feature-item">
           <div class="feature-icon-box"><span class="material-symbols-outlined">account_tree</span></div>
           <h4 class="feature-title" data-i18n="feature1-title">Clear structured layout</h4>
@@ -645,15 +333,15 @@
     </div>
   </div>
 
-  <!-- Optional Add‑ons (with tooltips) -->
+  <!-- Optional Add‑ons -->
   <div class="section-spacing-sm" style="background: var(--color-surface-container-low); border-top: 1px solid rgba(197,198,205,.1); border-bottom: 1px solid rgba(197,198,205,.1);">
     <div class="max-width-1440 text-center">
       <h2 class="card-title" style="font-size: 2rem; margin-bottom: 2rem;" data-i18n="pricing-addons-title">Optional Add-ons</h2>
       <div class="addons-wrapper">
-        <div class="addon-chip" data-tooltip="Regular updates, security patches, and technical support" data-i18n="addon1">Maintenance & Support</div>
-        <div class="addon-chip" data-tooltip="Fast, reliable hosting with 99.9% uptime monitoring" data-i18n="addon2">Hosting & Monitoring</div>
-        <div class="addon-chip" data-tooltip="A/B testing, funnel optimization, and CRO audits" data-i18n="addon3">Conversion Improvements</div>
-        <div class="addon-chip" data-tooltip="Custom workflows, Zapier/Make integrations, and lead routing" data-i18n="addon4">Automation Setup</div>
+        <div class="addon-chip" data-i18n="addon1">Maintenance & Support</div>
+        <div class="addon-chip" data-i18n="addon2">Hosting & Monitoring</div>
+        <div class="addon-chip" data-i18n="addon3">Conversion Improvements</div>
+        <div class="addon-chip" data-i18n="addon4">Automation Setup</div>
       </div>
     </div>
   </div>
@@ -665,18 +353,18 @@
         <h2 class="card-title" style="font-size: 3rem; margin-bottom: 1rem;" data-i18n="pricing-how-title">How it works</h2>
         <p style="font-size: 1.1rem; color: var(--color-on-surface-variant);" data-i18n="pricing-how-desc">A simple, transparent process for high-level execution.</p>
       </div>
-      <div class="steps-container" id="stepsContainer">
-        <div class="step-item">
+      <div class="steps-container">
+        <div>
           <div class="step-number">1</div>
           <h3 class="step-title" data-i18n="step1-title">Choose a service</h3>
           <p class="step-desc" data-i18n="step1-desc">Select the package that fits your current business stage and needs.</p>
         </div>
-        <div class="step-item">
+        <div>
           <div class="step-number">2</div>
           <h3 class="step-title" data-i18n="step2-title">Define scope</h3>
           <p class="step-desc" data-i18n="step2-desc">We align on the specific features, timeline, and goals for the build.</p>
         </div>
-        <div class="step-item">
+        <div>
           <div class="step-number">3</div>
           <h3 class="step-title" data-i18n="step3-title">Build and launch</h3>
           <p class="step-desc" data-i18n="step3-desc">Our architects execute the design and system, then push it live.</p>
@@ -712,43 +400,5 @@
 </footer>
 
 <script src="js/main.js"></script>
-
-<!-- Page-specific animation script (re-triggers on scroll) -->
-<script>
-  (function() {
-    function setupStaggeredObserver(containerSelector, itemSelector, delayMs, resetOnExit = true) {
-      const container = document.querySelector(containerSelector);
-      if (!container) return;
-      const items = Array.from(container.querySelectorAll(itemSelector));
-      if (!items.length) return;
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            items.forEach((item, idx) => {
-              setTimeout(() => {
-                item.classList.add('visible');
-              }, idx * delayMs);
-            });
-          } else if (resetOnExit) {
-            items.forEach(item => {
-              item.classList.remove('visible');
-            });
-          }
-        });
-      }, { threshold: 0.2 });
-      
-      observer.observe(container);
-    }
-    
-    setupStaggeredObserver('#featuresGrid', '.feature-item', 160, true);
-    setupStaggeredObserver('#stepsContainer', '.step-item', 200, true);
-    
-    const paymentGrid = document.getElementById('paymentGrid');
-    if (paymentGrid) {
-      setupStaggeredObserver('#paymentGrid', '.payment-card', 120, true);
-    }
-  })();
-</script>
 </body>
 </html>
